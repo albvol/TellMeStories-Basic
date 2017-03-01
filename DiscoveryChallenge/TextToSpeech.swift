@@ -10,13 +10,32 @@ import AVFoundation
 
 class TextToSpeech {
     
-    static func toSpeech(text: String, inLanguage: String, atRate: Float) {
+    let synthesizer = AVSpeechSynthesizer()
+    
+    func toSpeech(text: String, inLanguage: String, atRate: Float) {
+        
         let utterance = AVSpeechUtterance(string: text)
         utterance.voice = AVSpeechSynthesisVoice(language: inLanguage)
         utterance.rate = atRate
         
-        let synthesizer = AVSpeechSynthesizer()
-        synthesizer.speak(utterance)
-
+        self.synthesizer.speak(utterance)
+        
     }
+    
+    func pauseSpeaking() {
+        self.synthesizer.pauseSpeaking(at: AVSpeechBoundary.word)
+    }
+    
+    func stopSpeaking() {
+        synthesizer.stopSpeaking(at: AVSpeechBoundary.immediate)
+    }
+    
+    func continueSpeaking() {
+        synthesizer.continueSpeaking()
+    }
+    
+    func isSpeaking() -> Bool {
+        return synthesizer.isSpeaking
+    }
+    
 }
