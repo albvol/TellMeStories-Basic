@@ -1,5 +1,5 @@
 //
-//  UIComponent.swift
+//  Sprite.swift
 //  DiscoveryChallenge
 //
 //  Created by Alberto Volpe on 01/03/2017.
@@ -27,7 +27,7 @@ class Sprite: SKSpriteNode {
         super.alpha = alpha
         super.zPosition = z
         
-        if active { run(UIComponent.levitate, withKey: "fadeInOut") }
+        if active { run(Sprite.levitate, withKey: "fadeInOut") }
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -37,7 +37,7 @@ class Sprite: SKSpriteNode {
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         if active {
             //run(interactionSound)
-            run(UIComponent.upScale, withKey: "fadeInOut")
+            run(Sprite.upScale, withKey: "fadeInOut")
         }//else{
 //            super.touchesBegan(touches, with: event)
 //        }
@@ -46,13 +46,13 @@ class Sprite: SKSpriteNode {
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
         if active {
             //run(interactionSound)
-            run(UIComponent.downScale, withKey: "fadeInOut")
+            run(Sprite.downScale, withKey: "fadeInOut")
          }//else{
 //            super.touchesEnded(touches, with: event)
 //        }
     }
     
-    func addChild(component: UIComponent) {
+    func addChild(component: Sprite) {
         addChild(component)
     }
 }
