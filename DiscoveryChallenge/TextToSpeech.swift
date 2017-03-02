@@ -19,10 +19,6 @@ class TextToSpeech {
         utterance.rate = atRate
         
         self.synthesizer.speak(utterance)
-        
-        
-        
-        
     }
     
     func pauseSpeaking() {
