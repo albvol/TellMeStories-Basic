@@ -13,95 +13,102 @@ class GameScene: SKScene {
     
     private var background = SKSpriteNode(imageNamed: "Background")
     private var spinnyNode : SKShapeNode?
-    private var papyrus: SKSpriteNode?
+    var selectedNode = SKSpriteNode()
     
     override func didMove(to view: SKView) {
         
+        background.position = CGPoint(x:0,y:0)
         background.zPosition = -1
-        background.size.width = self.frame.width
-        background.size.height = self.frame.height
-        if background.size.width < background.size.height {
-        }else{
-            
-        }
-        
-//        background.size.width *= 1.7
-//        background.size.height *= 1.7
-        background.position = CGPoint(x: 0, y: 0)
+        background.size = view.bounds.size
+
         addChild(background)
         
-//     background.run(SKAction.init(named: "moveSky")!, withKey: "fadeInOut")
+        let papyrus = Sprite(usingImage: "Papyrus", referredWithName: "papyrus", withAlpha: CGFloat(0.8), onLayer: CGFloat(1), isActive: true)
         
-        self.papyrus = self.childNode(withName: "//papyrus") as? SKSpriteNode
-        if let papyrus = self.papyrus {
-            papyrus.run(SKAction.init(named: "levitate")!, withKey: "fadeInOut")
-        }
-    }
-    
-    
-    func touchDown(atPoint pos : CGPoint) {
+        let title = Sprite(usingImage: "Story", referredWithName: "story", withAlpha: CGFloat(1), onLayer: CGFloat(2), isActive: false)
+        title.position = CGPoint(x: 0, y: 125)
+        papyrus.addChild(title)
         
-    }
-    
-    func touchMoved(toPoint pos : CGPoint) {
-
-    }
-    
-    func touchUp(atPoint pos : CGPoint) {
-
-    }
-    
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        let storyTitle1 = Sprite(usingImage: "StoryTitle1", referredWithName: "story1", withAlpha: CGFloat(1), onLayer: CGFloat(2), isActive: false)
+        let storyTitle2 = Sprite(usingImage: "StoryTitle1", referredWithName: "story2", withAlpha: CGFloat(1), onLayer: CGFloat(2), isActive: false)
+        let storyTitle3 = Sprite(usingImage: "StoryTitle1", referredWithName: "story3", withAlpha: CGFloat(1), onLayer: CGFloat(2), isActive: false)
+        storyTitle1.position = CGPoint(x: 0, y: title.position.y - 105)
+        storyTitle2.position = CGPoint(x: 0, y: storyTitle1.position.y - 65)
+        storyTitle3.position = CGPoint(x: 0, y: storyTitle2.position.y - 65)
         
-        for t in touches {
-            
-            self.touchDown(atPoint: t.location(in: self))
-            let location = t.location(in: self)
-            let node : SKNode = self.atPoint(location)
-            
-            switch node.name! {
-            case "story1":
-                papyrus?.run(SKAction.init(named: "UpScale")!, withKey: "fadeInOut")
-                let transition = SKTransition.reveal(with: .left, duration: 2.0)
-                
-                let nextScene = Scene1(size: scene!.size)
-                nextScene.scaleMode = .aspectFill
-                
-                scene?.view?.presentScene(nextScene, transition: transition)
-            case "story2":
-                papyrus?.run(SKAction.init(named: "UpScale")!, withKey: "fadeInOut")
-            case "story3":
-                papyrus?.run(SKAction.init(named: "UpScale")!, withKey: "fadeInOut")
-            default:
-                break
-            }
-            
-        }
-    }
-    
-    override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
-        for t in touches { self.touchMoved(toPoint: t.location(in: self)) }
+        papyrus.addChild(storyTitle1)
+        papyrus.addChild(storyTitle2)
+        papyrus.addChild(storyTitle3)
+        addChild(papyrus)
     }
     
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
         
         for t in touches {
-            
-            self.touchUp(atPoint: t.location(in: self))
-            let location = t.location(in: self)
-            let node : SKNode = self.atPoint(location)
-            if node.name == "story1" || node.name == "story2" || node.name == "story3" {
-                papyrus?.run(SKAction.init(named: "DownScale")!, withKey: "fadeInOut")
+            let node = self.atPoint(t.location(in: self))
+            node.touchesEnded(touches, with: event)
+            print("\(node.name)")
+            if node.name != nil {
+                switch node.name! {
+                case "story1":
+                    self.openScene(nextScene: Scene1(size: scene!.size))
+                    //                    case "story2":
+                    //                        self.openScene(nextScene: Scene1(size: scene!.size))
+                    //                    case "story3":
+                //                        self.openScene(nextScene: Scene1(size: scene!.size))
+                default:
+                    break
+                }
             }
         }
     }
     
-    override func touchesCancelled(_ touches: Set<UITouch>, with event: UIEvent?) {
-        for t in touches { self.touchUp(atPoint: t.location(in: self)) }
+    func openScene(nextScene: SKScene) {
+        let transition = SKTransition.reveal(with: .left, duration: 2.0)
+        let nextScene = Scene1(size: scene!.size)
+        nextScene.scaleMode = .aspectFill
+        scene?.view?.presentScene(nextScene, transition: transition)
     }
     
+    //    override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
+    //        for t in touches { self.touchMoved(toPoint: t.location(in: self)) }
+    //    }
     
-    override func update(_ currentTime: TimeInterval) {
-        // Called before each frame is rendered
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        
+        for t in touches {
+            self.atPoint(t.location(in: self)).touchesBegan(touches, with: event)
+           
+            let touchedNode = self.atPoint(t.location(in: self))
+            if !selectedNode.isEqual(touchedNode) {
+                selectedNode.removeAllActions()
+                selectedNode = touchedNode as! SKSpriteNode
+            }
+        }
+    }
+    
+    override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
+        
+        for t in touches {
+            let positionInScene = t.location(in: self)
+            let previousPosition = t.previousLocation(in: self)
+            let translation = CGPoint(x: positionInScene.x - previousPosition.x, y: positionInScene.y - previousPosition.y)
+        
+            let position = selectedNode.position
+            
+            if selectedNode.name! == "papyrus" {
+                selectedNode.position = CGPoint(x: position.x + translation.x, y: position.y + translation.y)
+            } else {
+                let aNewPosition = CGPoint(x: position.x + translation.x, y: position.y + translation.y)
+                
+                let winSize = self.size
+                var retval = aNewPosition
+                retval.x = CGFloat(min(retval.x, 0))
+                retval.x = CGFloat(max(retval.x, -(background.size.width) + winSize.width))
+                retval.y = self.position.y
+                
+                background.position = retval
+            }
+        }
     }
 }
