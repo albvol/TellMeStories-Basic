@@ -20,6 +20,9 @@ class TextToSpeech {
         
         self.synthesizer.speak(utterance)
         
+        
+        
+        
     }
     
     func pauseSpeaking() {
