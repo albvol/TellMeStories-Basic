@@ -9,6 +9,7 @@
 import Foundation
 import SpriteKit
 import GameplayKit
+import CoreMotion
 
 class Sprite: SKSpriteNode {
     
@@ -17,13 +18,15 @@ class Sprite: SKSpriteNode {
     static let levitate = SKAction.init(named: "levitate")!
     //static let interactionSound = SKAction.playSoundFileNamed("ding.wav", waitForCompletion: true);
     
-    var active: Bool
-    var drag: Bool
+    var active: Bool = false
+    var drag: Bool = false
+    var isParallax: Bool = false
     
-    init(usingImage assetName: String, referredWithName name: String, withAlpha alpha: CGFloat, onLayer z: CGFloat, isActive active: Bool, isDraggable drag: Bool) {
+    let motionManager = CMMotionManager()
+    var destY:CGFloat  = 0.0
+    
+    init(usingImage assetName: String, referredWithName name: String, withAlpha alpha: CGFloat, onLayer z: CGFloat) {
         let texture = SKTexture(imageNamed: assetName)
-        self.drag = drag
-        self.active = active
         super.init(texture: texture, color: UIColor.clear, size: texture.size())
         super.name = name
         super.alpha = alpha
@@ -94,4 +97,44 @@ class Sprite: SKSpriteNode {
     func addChild(component: Sprite) {
         addChild(component)
     }
+    
+    func moveByAccelerometer(){
+        self.isParallax = true
+        
+        let aspectRatio1 = self.size.width/self.size.height
+        let randWidth1 = CGFloat(self.size.width + 50)
+        self.size = CGSize(width: randWidth1, height: randWidth1/aspectRatio1)
+
+        
+        if motionManager.isAccelerometerAvailable == true {
+            // 2
+            motionManager.startAccelerometerUpdates(to: OperationQueue.current!, withHandler:{
+                data, error in
+                
+                var currentY = self.position.y
+                
+                // 3
+                if data!.acceleration.y < 0.0 {
+                    if ( self.destY > -20.0) {
+                        self.destY = currentY + CGFloat((data?.acceleration.y)! * 50)
+                    }
+                }
+                    
+                else if data!.acceleration.y > 0.0 {
+                    if ( self.destY < 20.0) {
+                        self.destY = currentY + CGFloat((data?.acceleration.y)! * 50)
+                    }
+                }
+                
+            })
+            
+        }
+    }
+    
+    func parallaxMove() {
+        if ( isParallax ) {
+            self.run(SKAction.moveTo(x: self.destY, duration: 0.1))
+        }
+    }
+    
 }
