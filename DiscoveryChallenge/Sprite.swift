@@ -95,7 +95,11 @@ class Sprite: SKSpriteNode {
     }
     
     func addChild(component: Sprite) {
-        addChild(component)
+        super.addChild(component)
+    }
+    
+    func addChild(label: SKLabelNode) {
+        super.addChild(label)
     }
     
     func moveByAccelerometer(){

@@ -12,7 +12,7 @@ import GameplayKit
 
 class Scene1: SKScene {
     
-    private var background = SKSpriteNode(imageNamed: "Forest")
+    private var background = Sprite(usingImage: "Forest", referredWithName: "forest", withAlpha: CGFloat(1.0), onLayer: CGFloat(0))
     private var papyrus: SKSpriteNode?
     
     override func didMove(to view: SKView) {
@@ -20,25 +20,15 @@ class Scene1: SKScene {
         
         background.position = CGPoint(x:0,y:0)
         background.size = view.bounds.size
+        background.moveByAccelerometer()
         
         addChild(background)
         
         let papyrus = Sprite(usingImage: "Papyrus", referredWithName: "papyrus", withAlpha: CGFloat(0.8), onLayer: CGFloat(1))
+        papyrus.size.width = size.width/2
+        papyrus.size.height = size.height
+        papyrus.position = CGPoint(x:size.width/4, y: 0)
         
-        let title = Sprite(usingImage: "Story", referredWithName: "story", withAlpha: CGFloat(1), onLayer: CGFloat(2))
-        title.position = CGPoint(x: 0, y: 125)
-        papyrus.addChild(title)
-        
-        let storyTitle1 = Sprite(usingImage: "StoryTitle1", referredWithName: "story1", withAlpha: CGFloat(1), onLayer: CGFloat(2))
-        let storyTitle2 = Sprite(usingImage: "StoryTitle1", referredWithName: "story2", withAlpha: CGFloat(1), onLayer: CGFloat(2))
-        let storyTitle3 = Sprite(usingImage: "StoryTitle1", referredWithName: "story3", withAlpha: CGFloat(1), onLayer: CGFloat(2))
-        storyTitle1.position = CGPoint(x: 0, y: title.position.y - 105)
-        storyTitle2.position = CGPoint(x: 0, y: storyTitle1.position.y - 65)
-        storyTitle3.position = CGPoint(x: 0, y: storyTitle2.position.y - 65)
-        
-        papyrus.addChild(storyTitle1)
-        papyrus.addChild(storyTitle2)
-        papyrus.addChild(storyTitle3)
         addChild(papyrus)
     }
 }
