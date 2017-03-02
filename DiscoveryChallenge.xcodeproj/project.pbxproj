@@ -134,7 +134,6 @@
 				2AE24CCE1E65D5B600A6F7B8 /* Info.plist */,
 				2A47A3AD1E66E90D005FA1B4 /* Scene1.sks */,
 				2A47A3AF1E66E962005FA1B4 /* Scene1.swift */,
-				2ACF7B691E67616F00C30525 /* Sprite.swift */,
 			);
 			path = DiscoveryChallenge;
 			sourceTree = "<group>";
@@ -161,6 +160,7 @@
 			isa = PBXGroup;
 			children = (
 				F3624A871E66F812005C7C3A /* TextToSpeech.swift */,
+				2ACF7B691E67616F00C30525 /* Sprite.swift */,
 			);
 			name = Utils;
 			sourceTree = "<group>";
