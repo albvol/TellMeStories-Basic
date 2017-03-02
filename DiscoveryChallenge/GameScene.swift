@@ -25,6 +25,8 @@ class GameScene: SKScene {
         addChild(background)
         
         let papyrus = Sprite(usingImage: "Papyrus", referredWithName: "papyrus", withAlpha: CGFloat(0.8), onLayer: CGFloat(1))
+        papyrus.active = true
+        papyrus.drag = true
         
         
         let title = Sprite(usingImage: "Story", referredWithName: "story", withAlpha: CGFloat(1), onLayer: CGFloat(2))
