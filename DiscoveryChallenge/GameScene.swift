@@ -16,7 +16,9 @@ class GameScene: SKScene {
     
     override func didMove(to view: SKView) {
         
-        background.size = view.bounds.size
+        let aspectRatio1 = view.frame.width/view.frame.height
+        let randWidth1 = CGFloat(view.frame.width + 50.0)
+        background.size = CGSize(width: randWidth1, height: randWidth1/aspectRatio1)
         addChild(background)
         
         let papyrus = InteractionableSprite(usingImage: "Papyrus", referredWithName: "papyrus", withAlpha: CGFloat(0.8), onLayer: CGFloat(1))
