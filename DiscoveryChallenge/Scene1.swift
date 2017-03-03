@@ -12,16 +12,15 @@ import GameplayKit
 
 class Scene1: SKScene {
     
-    private var background = Sprite(usingImage: "Forest", referredWithName: "forest", withAlpha: CGFloat(1.0), onLayer: CGFloat(0))
-    private var papyrus: SKSpriteNode?
+    private var background = BackgroundSprite(usingImage: "Forest", referredWithName: "forest")
     private var tts = TextToSpeech()
     
     override func didMove(to view: SKView) {
+        
         self.anchorPoint = CGPoint(x: 0.5, y:0.5)
         
         background.position = CGPoint(x:0,y:0)
         background.size = view.bounds.size
-        
         addChild(background)
         
         let papyrus = Sprite(usingImage: "Papyrus", referredWithName: "papyrus", withAlpha: CGFloat(0.8), onLayer: CGFloat(1))
@@ -37,12 +36,6 @@ class Scene1: SKScene {
         addChild(papyrus)
         
         tts.toSpeech(text: "Nell’Argolide, storica regione dell’antica Grecia, c'era una valle chiamata Nemea dove viveva uno spaventoso leone, nato da Tifone e da Echidna, che terrorizzava tutti gli uomini. Questo leone era invulnerabile, nessuna arma era capace di scalfire la sua durissima pelle; zanne ed artigli erano dure quanto il metallo.", inLanguage: "it-IT", atRate: 0.45)
-        
-        let navigation = Sprite(usingImage: "Navigation", referredWithName: "navigation", withAlpha: CGFloat(0.7), onLayer: CGFloat(2))
-        navigation.size.width = size.width
-        navigation.position = CGPoint(x: 0, y: -size.height/2 + navigation.size.height/2)
-        addChild(navigation)
-        
     }
     
     override func update(_ currentTime: TimeInterval) {

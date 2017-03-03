@@ -35,8 +35,6 @@ class InteractionableSprite: Sprite {
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        super.touchesBegan(touches, with: event)
-        
         print(TAG, "touchesBegan")
         //run(interactionSound)
         run(InteractionableSprite.upScale, withKey: "fadeInOut")
@@ -44,15 +42,12 @@ class InteractionableSprite: Sprite {
     }
     
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
-        super.touchesEnded(touches, with: event)
-        
         print(TAG, "touchesEnded")
         //run(interactionSound)
         run(InteractionableSprite.downScale, withKey: "fadeInOut")
     }
     
     override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
-        super.touchesMoved(touches, with: event)
         
         print(TAG, "touchesMoved")
     }

@@ -31,7 +31,7 @@ class GameScene: SKScene {
         storyTitle1.position = CGPoint(x: 0, y: title.position.y - 105)
         storyTitle2.position = CGPoint(x: 0, y: storyTitle1.position.y - 65)
         storyTitle3.position = CGPoint(x: 0, y: storyTitle2.position.y - 65)
-        
+ 
         papyrus.addChild(storyTitle1)
         papyrus.addChild(storyTitle2)
         papyrus.addChild(storyTitle3)
@@ -43,7 +43,6 @@ class GameScene: SKScene {
         
         for t in touches {
             let node = self.atPoint(t.location(in: self))
-            node.touchesEnded(touches, with: event)
             
             if node.name != nil {
                 switch node.name! {
@@ -54,7 +53,7 @@ class GameScene: SKScene {
                 case "story3":
                     self.openScene(nextScene: Scene1(size: scene!.size))
                 default:
-                    break
+                    node.touchesEnded(touches, with: event)
                 }
             }
         }
@@ -69,7 +68,18 @@ class GameScene: SKScene {
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         
-        for t in touches { self.atPoint(t.location(in: self)).touchesBegan(touches, with: event) }
+        for t in touches {
+            let node = self.atPoint(t.location(in: self))
+            
+            if node.name != nil {
+                switch node.name! {
+                case "story1", "story2", "story3":
+                    break
+                default:
+                    node.touchesBegan(touches, with: event)
+                }
+            }
+        }
     }
     
     override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {

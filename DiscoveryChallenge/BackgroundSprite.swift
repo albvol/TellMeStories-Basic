@@ -59,17 +59,14 @@ class BackgroundSprite: Sprite {
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         print(TAG, "touchesBegan")
-        super.touchesBegan(touches, with: event)
     }
     
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
         print(TAG, "touchesEnded")
-        super.touchesEnded(touches, with: event)
     }
     
     override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
         print(TAG, "touchesMoved")
-        super.touchesEnded(touches, with: event)
     }
     
     func parallaxMove() {
