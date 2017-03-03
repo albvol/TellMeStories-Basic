@@ -25,9 +25,11 @@ class Scene1: SKScene {
         addChild(background)
         
         let papyrus = Sprite(usingImage: "Papyrus", referredWithName: "papyrus", withAlpha: CGFloat(0.8), onLayer: CGFloat(1))
-        papyrus.size.width = size.width/2
+        papyrus.size.width = size.width/3
         papyrus.size.height = size.height-100
-        papyrus.position = CGPoint(x:size.width/4, y: 50)
+        
+        //papiro posto nell'ultimo terzo dello schermo così diamo più spazio per le interazioni
+        papyrus.position = CGPoint(x: size.width/3, y: 50)
         
         let narrativa1Leone = Sprite(usingImage: "Narrativa_1_Leone", referredWithName: "narrativa1Leone", withAlpha: CGFloat(1.0), onLayer: CGFloat(2))
         

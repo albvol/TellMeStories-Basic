@@ -12,25 +12,17 @@ import CoreMotion
 
 class GameScene: SKScene {
     
-    private var background = Sprite(usingImage: "Background", referredWithName: "background", withAlpha: CGFloat(1.0), onLayer: CGFloat(0))
-    var selectedNode = SKSpriteNode()
-    
+    private var background = BackgroundSprite(usingImage: "Background", referredWithName: "background")
     
     override func didMove(to view: SKView) {
-        background.position = CGPoint(x:0,y:0)
-        background.size = view.bounds.size
-
-        background.moveByAccelerometer()
         
+        background.size = view.bounds.size
         addChild(background)
         
-        let papyrus = Sprite(usingImage: "Papyrus", referredWithName: "papyrus", withAlpha: CGFloat(0.8), onLayer: CGFloat(1))
-        papyrus.active = true
-        papyrus.drag = true
-        
-        
+        let papyrus = InteractionableSprite(usingImage: "Papyrus", referredWithName: "papyrus", withAlpha: CGFloat(0.8), onLayer: CGFloat(1))
         let title = Sprite(usingImage: "Story", referredWithName: "story", withAlpha: CGFloat(1), onLayer: CGFloat(2))
         title.position = CGPoint(x: 0, y: 125)
+        
         papyrus.addChild(title)
         
         let storyTitle1 = Sprite(usingImage: "StoryTitle1", referredWithName: "story1", withAlpha: CGFloat(1), onLayer: CGFloat(2))
@@ -85,24 +77,7 @@ class GameScene: SKScene {
         for t in touches { self.atPoint(t.location(in: self)).touchesMoved(touches, with: event) }
     }
     
-    override func update(_ currentTime: TimeInterval) {
-        // Set vertical effect
-        let verticalMotionEffect = UIInterpolatingMotionEffect(keyPath: "center.y",
-                                                               type: .tiltAlongVerticalAxis)
-        verticalMotionEffect.minimumRelativeValue = -10
-        verticalMotionEffect.maximumRelativeValue = 10
-        
-        // Set horizontal effect
-        let horizontalMotionEffect = UIInterpolatingMotionEffect(keyPath: "center.x",
-                                                                 type: .tiltAlongHorizontalAxis)
-        horizontalMotionEffect.minimumRelativeValue = -10
-        horizontalMotionEffect.maximumRelativeValue = 10
-        
-        // Create group to combine both
-        let group = UIMotionEffectGroup()
-        group.motionEffects = [horizontalMotionEffect, verticalMotionEffect]
-
-        
+    override func update(_ currentTime: TimeInterval) {        
         self.background.parallaxMove()
     }
 }

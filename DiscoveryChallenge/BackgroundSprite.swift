@@ -17,9 +17,11 @@ class BackgroundSprite: Sprite {
     let motionManager = CMMotionManager()
     var destY: CGFloat  = 0.0
     
-    override init(usingImage assetName: String, referredWithName name: String, withAlpha alpha: CGFloat, onLayer z: CGFloat) {
+    init(usingImage assetName: String, referredWithName name: String) {
 
-        super.init(usingImage: assetName, referredWithName: name, withAlpha: alpha, onLayer: z)
+        super.init(usingImage: assetName, referredWithName: name, withAlpha: CGFloat(1.0), onLayer: CGFloat(0))
+    
+        position = CGPoint(x:0,y:0)
         
         let aspectRatio1 = self.size.width/self.size.height
         let randWidth1 = CGFloat(self.size.width + 50)
@@ -73,5 +75,4 @@ class BackgroundSprite: Sprite {
     func parallaxMove() {
         self.run(SKAction.moveTo(x: self.destY, duration: 0.1))
     }
-    
 }
