@@ -37,6 +37,14 @@ class GameViewController: UIViewController {
         }
     }
     
+    override func viewWillDisappear(_ animated: Bool) {
+        player?.pause()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        player?.play()
+    }
+    
     func playSound() {
         let url = Bundle.main.url(forResource: "tune", withExtension: "mp3")!
         
@@ -45,7 +53,7 @@ class GameViewController: UIViewController {
             guard let player = player else { return }
             
             player.prepareToPlay()
-            player.play()
+            player.volume = 0.1
         } catch let error {
             print(error.localizedDescription)
         }
