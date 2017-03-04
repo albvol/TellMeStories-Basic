@@ -37,4 +37,6 @@ class TextToSpeech {
         return synthesizer.isSpeaking
     }
     
+    
+    
 }
