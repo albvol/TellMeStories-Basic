@@ -47,7 +47,7 @@ class Sprite: SKSpriteNode {
         super.addChild(component)
     }
     
-    func addText(Text t: String) {
+    func addText(Text t: String, onLayer z: CGFloat) {
 //        print(TAG, t.characters.count)
 //        print(TAG, Int(super.size.width))
         
@@ -66,7 +66,7 @@ class Sprite: SKSpriteNode {
             
             label = SKLabelNode(fontNamed: "Chalkduster")
             label.fontSize = 18
-            label.zPosition = 2
+            label.zPosition = z
             label.fontColor = SKColor.black
             label.position = CGPoint(x: 0, y: positionY)
             

@@ -28,21 +28,37 @@ class Scene1: SKScene {
         
         let fish = InteractionableSprite(usingImage: "Fish", referredWithName: "fish", withAlpha: CGFloat(1.0), onLayer: CGFloat(1))
         fish.position.y = 150
+        fish.position.x = 50
         map.addChild(fish)
+        
+        let micene = InteractionableSprite(usingImage: "Micene", referredWithName: "micene", withAlpha: CGFloat(1.0), onLayer: CGFloat(1))
+        micene.position.y = -205
+        micene.position.x = 180
+        map.addChild(micene)
+        
+        let village1 = InteractionableSprite(usingImage: "Village", referredWithName: "village", withAlpha: CGFloat(1.0), onLayer: CGFloat(1))
+        village1.position.y = -120
+        village1.position.x = -350
+        map.addChild(village1)
+        
+        let cavern = InteractionableSprite(usingImage: "Cavern", referredWithName: "cavern", withAlpha: CGFloat(1.0), onLayer: CGFloat(1))
+        cavern.position.y = -15
+        cavern.position.x = -550
+        map.addChild(cavern)
         
         addChild(map)
         
-        let papyrus = Sprite(usingImage: "Papyrus", referredWithName: "papyrus", withAlpha: CGFloat(0.8), onLayer: CGFloat(2))
+        let papyrus = Sprite(usingImage: "Papyrus", referredWithName: "papyrus", withAlpha: CGFloat(0.8), onLayer: CGFloat(3))
         papyrus.size.width = size.width / 3
         papyrus.size.height = size.height - 100
         papyrus.position = CGPoint(x: size.width/3, y: 50)
         
-        let narratrice = Sprite(usingImage: "Narratrice", referredWithName: "narratrice", withAlpha: CGFloat(2.0), onLayer: CGFloat(4))
+        let narratrice = Sprite(usingImage: "Narratrice", referredWithName: "narratrice", withAlpha: CGFloat(2.0), onLayer: CGFloat(3))
         
         narratrice.position.x = size.width / 4 - (narratrice.size.width/3)*2
         papyrus.addChild(narratrice)
     
-        papyrus.addText(Text: "Nell’Argolide, storica regione dell’antica Grecia, c'era una valle chiamata Nemea dove viveva uno spaventoso leone, nato da Tifone e da Echidna, che terrorizzava tutti gli uomini. Questo leone era invulnerabile, nessuna arma era capace di scalfire la sua durissima pelle; zanne ed artigli erano dure quanto il metallo.")
+        papyrus.addText(Text: "Nell’Argolide, storica regione dell’antica Grecia, c'era una valle chiamata Nemea dove viveva uno spaventoso leone, nato da Tifone e da Echidna, che terrorizzava tutti gli uomini. Questo leone era invulnerabile, nessuna arma era capace di scalfire la sua durissima pelle; zanne ed artigli erano dure quanto il metallo.", onLayer: CGFloat(2))
         
         addChild(papyrus)
         tts.toSpeech(text: "Nell’Argòlide, storica regione dell’antica Grecia, c'era una valle chiamata Nemea, dove viveva uno spaventoso leone, nato da Tifone e da Echidna, che terrorizzava tutti gli uomini. Questo leone era invulnerabile, nessuna arma era capace di scalfire la sua durissima pelle; zanne ed artigli erano dure quanto il metallo.", inLanguage: "it-IT", atRate: 0.45)

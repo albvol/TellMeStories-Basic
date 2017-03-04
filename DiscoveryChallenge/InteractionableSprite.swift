@@ -22,11 +22,6 @@ class InteractionableSprite: Sprite {
     override init(usingImage assetName: String, referredWithName name: String, withAlpha alpha: CGFloat, onLayer z: CGFloat) {
         
         super.init(usingImage: assetName, referredWithName: name, withAlpha: alpha, onLayer: z)
-
-        super.name = name
-        super.alpha = alpha
-        super.zPosition = z
-        
         run(InteractionableSprite.levitate, withKey: "fadeInOut")
     }
     
