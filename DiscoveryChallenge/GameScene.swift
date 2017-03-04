@@ -22,9 +22,9 @@ class GameScene: SKScene {
         addChild(background)
         
         let papyrus = InteractionableSprite(usingImage: "Papyrus", referredWithName: "papyrus", withAlpha: CGFloat(0.8), onLayer: CGFloat(1))
+        
         let title = Sprite(usingImage: "Story", referredWithName: "story", withAlpha: CGFloat(1), onLayer: CGFloat(2))
         title.position = CGPoint(x: 0, y: 125)
-        
         papyrus.addChild(title)
         
         let storyTitle1 = Sprite(usingImage: "StoryTitle1", referredWithName: "story1", withAlpha: CGFloat(1), onLayer: CGFloat(2))
@@ -37,8 +37,9 @@ class GameScene: SKScene {
         papyrus.addChild(storyTitle1)
         papyrus.addChild(storyTitle2)
         papyrus.addChild(storyTitle3)
-        addChild(papyrus)
         
+        addChild(papyrus)
+    
     }
     
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {

@@ -11,7 +11,7 @@ import SpriteKit
 import GameplayKit
 import CoreMotion
 
-class DraggableSprite: Sprite {
+class DraggableSprite: InteractionableSprite {
     
     private let TAG = "DraggableSprite"
     let motionManager = CMMotionManager()
