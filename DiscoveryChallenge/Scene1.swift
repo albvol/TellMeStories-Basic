@@ -25,6 +25,12 @@ class Scene1: SKScene {
         addChild(sky)
         
         let map = DraggableSprite(usingImage: "Map", referredWithName: "map", withAlpha: CGFloat(1.0), onLayer: CGFloat(1))
+        
+        let fish = InteractionableSprite(usingImage: "Fish", referredWithName: "fish", withAlpha: CGFloat(1.0), onLayer: CGFloat(1))
+        fish.position.y = map.frame.maxY
+        map.addChild(fish)
+
+        
         addChild(map)
         
         let papyrus = Sprite(usingImage: "Papyrus", referredWithName: "papyrus", withAlpha: CGFloat(0.8), onLayer: CGFloat(2))
