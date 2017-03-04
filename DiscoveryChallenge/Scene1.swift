@@ -27,8 +27,8 @@ class Scene1: SKScene {
         let map = MapSprite(usingImage: "Map", referredWithName: "map", withAlpha: CGFloat(1.0), onLayer: CGFloat(1))
         
         let fish = InteractionableSprite(usingImage: "Fish", referredWithName: "fish", withAlpha: CGFloat(1.0), onLayer: CGFloat(1))
-        fish.position.y = 150
-        fish.position.x = 50
+        fish.position.y = 140
+        fish.position.x = 45
         map.addChild(fish)
         
         let micene = InteractionableSprite(usingImage: "Micene", referredWithName: "micene", withAlpha: CGFloat(1.0), onLayer: CGFloat(1))
