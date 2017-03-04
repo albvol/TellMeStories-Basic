@@ -27,9 +27,8 @@ class Scene1: SKScene {
         let map = DraggableSprite(usingImage: "Map", referredWithName: "map", withAlpha: CGFloat(1.0), onLayer: CGFloat(1))
         
         let fish = InteractionableSprite(usingImage: "Fish", referredWithName: "fish", withAlpha: CGFloat(1.0), onLayer: CGFloat(1))
-        fish.position.y = map.frame.maxY
+        fish.position.y = 150
         map.addChild(fish)
-
         
         addChild(map)
         
