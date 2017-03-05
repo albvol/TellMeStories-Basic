@@ -11,12 +11,12 @@ import SpriteKit
 import GameplayKit
 import CoreMotion
 
-class MapSprite: Sprite {
+class PanSprite: Sprite {
     
     static let downScaleAndStop = SKAction.init(named: "DownScaleAndStop")!
     static let upScaleAndStop = SKAction.init(named: "UpScaleAndStop")!
     //static let interactionSound = SKAction.playSoundFileNamed("ding.wav", waitForCompletion: true);
-    private let TAG = "MapSprite"
+    private let TAG = "PanSprite"
     
     override init(usingImage assetName: String, referredWithName name: String, withAlpha alpha: CGFloat, onLayer z: CGFloat) {
         
@@ -30,14 +30,14 @@ class MapSprite: Sprite {
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         print(TAG, "touchesBegan")
         //run(interactionSound)
-        run(MapSprite.upScaleAndStop, withKey: "fadeInOut")
+        run(PanSprite.upScaleAndStop, withKey: "fadeInOut")
         
     }
     
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
         print(TAG, "touchesEnded")
         //run(interactionSound)
-        run(MapSprite.downScaleAndStop, withKey: "fadeInOut")
+        run(PanSprite.downScaleAndStop, withKey: "fadeInOut")
     }
     
     override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
