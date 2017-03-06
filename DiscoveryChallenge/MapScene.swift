@@ -107,6 +107,8 @@ class MapScene: SKScene {
     
     override func update(_ currentTime: TimeInterval) {
         
+        //do nothing
+        
     }
 }
 
