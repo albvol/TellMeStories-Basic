@@ -13,6 +13,7 @@ import CoreMotion
 
 class PanSprite: Sprite {
     
+    
     static let downScaleAndStop = SKAction.init(named: "DownScaleAndStop")!
     static let upScaleAndStop = SKAction.init(named: "UpScaleAndStop")!
     //static let interactionSound = SKAction.playSoundFileNamed("ding.wav", waitForCompletion: true);
