@@ -28,15 +28,9 @@ class GameScene: SKScene {
         papyrus.addChild(title)
         
         let storyTitle1 = Sprite(usingImage: "StoryTitle1", referredWithName: "story1", withAlpha: CGFloat(1), onLayer: CGFloat(2))
-        let storyTitle2 = Sprite(usingImage: "StoryTitle1", referredWithName: "story2", withAlpha: CGFloat(1), onLayer: CGFloat(2))
-        let storyTitle3 = Sprite(usingImage: "StoryTitle1", referredWithName: "story3", withAlpha: CGFloat(1), onLayer: CGFloat(2))
         storyTitle1.position = CGPoint(x: 0, y: title.position.y - 105)
-        storyTitle2.position = CGPoint(x: 0, y: storyTitle1.position.y - 65)
-        storyTitle3.position = CGPoint(x: 0, y: storyTitle2.position.y - 65)
  
         papyrus.addChild(storyTitle1)
-        papyrus.addChild(storyTitle2)
-        papyrus.addChild(storyTitle3)
         
         addChild(papyrus)
     
@@ -49,12 +43,6 @@ class GameScene: SKScene {
             
             if node.name != nil {
                 switch node.name! {
-                case "story1":
-                    self.openScene(nextScene: Scene1(size: scene!.size))
-                case "story2":
-                    self.openScene(nextScene: Scene1(size: scene!.size))
-                case "story3":
-                    self.openScene(nextScene: Scene1(size: scene!.size))
                 default:
                     node.touchesEnded(touches, with: event)
                 }
@@ -63,8 +51,7 @@ class GameScene: SKScene {
     }
     
     func openScene(nextScene: SKScene) {
-        let transition = SKTransition.reveal(with: .left, duration: 2.0)
-        let nextScene = Scene1(size: scene!.size)
+        let transition = SKTransition.doorway(withDuration: 1.0)
         nextScene.scaleMode = .aspectFill
         scene?.view?.presentScene(nextScene, transition: transition)
     }
@@ -76,8 +63,8 @@ class GameScene: SKScene {
             
             if node.name != nil {
                 switch node.name! {
-                case "story1", "story2", "story3":
-                    break
+                case "story1":
+                    self.openScene(nextScene: MapScene(size: scene!.size))
                 default:
                     node.touchesBegan(touches, with: event)
                 }
