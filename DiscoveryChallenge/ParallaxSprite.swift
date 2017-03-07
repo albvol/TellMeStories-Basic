@@ -11,9 +11,9 @@ import SpriteKit
 import GameplayKit
 import CoreMotion
 
-class BackgroundSprite: Sprite {
+class ParralaxSprite: Sprite {
     
-    private let TAG = "BackgroundSprite"
+    private let TAG = "ParralaxSprite"
     let motionManager = CMMotionManager()
     var destY: CGFloat  = 0.0
     

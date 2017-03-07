@@ -13,50 +13,38 @@ import AVFoundation
 
 class GameViewController: UIViewController {
     
-    var player: AVAudioPlayer?
+    static var scene: SKScene?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         if let view = self.view as! SKView? {
-            // Load the SKScene from 'GameScene.sks'
-            if let scene = SKScene(fileNamed: "GameScene") {
-                // Set the scale mode to scale to fit the window
-                scene.scaleMode = .resizeFill
-                
-                // Present the scene
-                view.presentScene(scene)
-            }
             
+            GameViewController.scene = SKScene(fileNamed: "GameScene")!
+            GameViewController.scene?.scaleMode = .resizeFill
+            view.presentScene(GameViewController.scene)
             view.ignoresSiblingOrder = true
             
             //view.showsFPS = true
             //view.showsNodeCount = true
             
-            playSound()
+            Sound.init(usingFile: "tune")
+            Language.init()
+            Language.change()
         }
+    }
+    
+    static func openScene(nextScene: SKScene) {
+        nextScene.scaleMode = .aspectFill
+        GameViewController.scene!.view?.presentScene(nextScene, transition: SKTransition.doorway(withDuration: 1.5))
     }
     
     override func viewWillDisappear(_ animated: Bool) {
-        player?.pause()
+        Sound.off()
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        player?.play()
-    }
-    
-    func playSound() {
-        let url = Bundle.main.url(forResource: "tune", withExtension: "mp3")!
-        
-        do {
-            player = try AVAudioPlayer(contentsOf: url)
-            guard let player = player else { return }
-            
-            player.prepareToPlay()
-            player.volume = 0.1
-        } catch let error {
-            print(error.localizedDescription)
-        }
+        Sound.on()
     }
     
     override var shouldAutorotate: Bool {

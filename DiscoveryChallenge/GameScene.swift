@@ -12,28 +12,36 @@ import CoreMotion
 
 class GameScene: SKScene {
     
-    private var background = BackgroundSprite(usingImage: "Background", referredWithName: "background")
+    private var background = ParralaxSprite(usingImage: "Overlay", referredWithName: "background")
+    private var sound, language: Sprite?
     
     override func didMove(to view: SKView) {
         
-        let aspectRatio1 = view.frame.width/view.frame.height
-        let randWidth1 = CGFloat(view.frame.width + 50.0)
-        background.size = CGSize(width: randWidth1, height: randWidth1/aspectRatio1)
+        //Add to the Scene the Background
         addChild(background)
         
-        let papyrus = InteractionableSprite(usingImage: "Papyrus", referredWithName: "papyrus", withAlpha: CGFloat(0.8), onLayer: CGFloat(1))
+        //Create, Poisition and Add to the Scene the Sound Sprite
+        sound = Sprite(usingImage: "ActiveSound", referredWithName: "sound", withAlpha: CGFloat(1.0), onLayer: CGFloat(1))
+        sound?.position = CGPoint(x: -(view.frame.width/2 - (sound?.frame.width)!), y: -(view.frame.height/2 - (sound?.frame.height)!))
+        addChild(sound!)
         
-        let title = Sprite(usingImage: "Story", referredWithName: "story", withAlpha: CGFloat(1), onLayer: CGFloat(2))
-        title.position = CGPoint(x: 0, y: 125)
-        papyrus.addChild(title)
+        //Create, Poisition and Add to the Scene the Title InteractionableSprite
+        let title = InteractionableSprite(usingImage: "Tellmestories", referredWithName: "title", withAlpha: CGFloat(1), onLayer: CGFloat(1))
+        title.position = CGPoint(x: 0, y: view.frame.height/2 - title.frame.height)
+        addChild(title)
         
-        let storyTitle1 = Sprite(usingImage: "StoryTitle1", referredWithName: "story1", withAlpha: CGFloat(1), onLayer: CGFloat(2))
-        storyTitle1.position = CGPoint(x: 0, y: title.position.y - 105)
- 
-        papyrus.addChild(storyTitle1)
+        //Create, Poisition and Add to the Scene the Language Label Sprite
+        language = Sprite(usingImage: "Italian", referredWithName: "language", withAlpha: CGFloat(1.0), onLayer: CGFloat(1))
+        language?.position = CGPoint(x: view.frame.width/2 - (language?.frame.width)!, y: -(view.frame.height/2 - (language?.frame.height)!))
+        addChild(language!)
         
-        addChild(papyrus)
-    
+        //Create, Poisition and Add to the Scene the Label "Start"
+        let label = SKLabelNode(fontNamed: "Chalkduster")
+        label.name = "start"
+        label.zPosition = 1
+        label.color = SKColor.black
+        label.text = "INIZIA"
+        addChild(label)
     }
     
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -49,13 +57,7 @@ class GameScene: SKScene {
             }
         }
     }
-    
-    func openScene(nextScene: SKScene) {
-        let transition = SKTransition.doorway(withDuration: 1.0)
-        nextScene.scaleMode = .aspectFill
-        scene?.view?.presentScene(nextScene, transition: transition)
-    }
-    
+        
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         
         for t in touches {
@@ -63,8 +65,18 @@ class GameScene: SKScene {
             
             if node.name != nil {
                 switch node.name! {
-                case "story1":
-                    self.openScene(nextScene: MapScene(size: scene!.size))
+                case "sound":
+                    var assetName: String
+                    if Sound.changeStatus() {
+                        assetName = "ActiveSound"
+                    }else{
+                        assetName = "MuteSound"
+                    }
+                    sound!.texture = SKTexture(imageNamed: assetName)
+                case "language":
+                    language!.texture = SKTexture(imageNamed: Language.change())
+                case "start":
+                    GameViewController.openScene(nextScene: IntroScene(size: self.size))
                 default:
                     node.touchesBegan(touches, with: event)
                 }

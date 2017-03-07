@@ -13,7 +13,7 @@ import GameplayKit
 class MapScene: SKScene {
     
     private let tts = TextToSpeech()
-    private let sky = BackgroundSprite(usingImage: "Sky", referredWithName: "sky")
+    private let sky = ParralaxSprite(usingImage: "Sky", referredWithName: "sky")
 
     override func didMove(to view: SKView) {
         
@@ -58,10 +58,10 @@ class MapScene: SKScene {
         narratrice.position.x = size.width / 4 - (narratrice.size.width/3)*2
         papyrus.addChild(narratrice)
     
-        papyrus.addText(Text: "Nell’Argolide, storica regione dell’antica Grecia, c'era una valle chiamata Nemea dove viveva uno spaventoso leone, nato da Tifone e da Echidna, che terrorizzava tutti gli uomini. Questo leone era invulnerabile, nessuna arma era capace di scalfire la sua durissima pelle; zanne ed artigli erano dure quanto il metallo.", onLayer: CGFloat(2))
-        
-        addChild(papyrus)
-        tts.toSpeech(text: "Nell’Argòlide, storica regione dell’antica Grecia, c'era una valle chiamata Nemea, dove viveva uno spaventoso leone, nato da Tifone e da Echidna, che terrorizzava tutti gli uomini. Questo leone era invulnerabile, nessuna arma era capace di scalfire la sua durissima pelle; zanne ed artigli erano dure quanto il metallo.", inLanguage: "it-IT", atRate: 0.45)
+//        papyrus.addText(Text: "Nell’Argolide, storica regione dell’antica Grecia, c'era una valle chiamata Nemea dove viveva uno spaventoso leone, nato da Tifone e da Echidna, che terrorizzava tutti gli uomini. Questo leone era invulnerabile, nessuna arma era capace di scalfire la sua durissima pelle; zanne ed artigli erano dure quanto il metallo.", onLayer: CGFloat(2))
+//        
+//        addChild(papyrus)
+//        tts.toSpeech(text: "Nell’Argòlide, storica regione dell’antica Grecia, c'era una valle chiamata Nemea, dove viveva uno spaventoso leone, nato da Tifone e da Echidna, che terrorizzava tutti gli uomini. Questo leone era invulnerabile, nessuna arma era capace di scalfire la sua durissima pelle; zanne ed artigli erano dure quanto il metallo.", inLanguage: "it-IT", atRate: 0.45)
     }
     
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -92,7 +92,7 @@ class MapScene: SKScene {
             if node.name != nil {
                 switch node.name! {
                 case "micene":
-                    openScene(nextScene: Scene1(size: scene!.size))
+                    openScene(nextScene: IntroScene(size: scene!.size))
                 default:
                     node.touchesBegan(touches, with: event)
                 }

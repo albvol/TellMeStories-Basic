@@ -13,7 +13,6 @@ import CoreMotion
 
 class PanSprite: Sprite {
     
-    
     static let downScaleAndStop = SKAction.init(named: "DownScaleAndStop")!
     static let upScaleAndStop = SKAction.init(named: "UpScaleAndStop")!
     //static let interactionSound = SKAction.playSoundFileNamed("ding.wav", waitForCompletion: true);
@@ -32,7 +31,6 @@ class PanSprite: Sprite {
         print(TAG, "touchesBegan")
         //run(interactionSound)
         run(PanSprite.upScaleAndStop, withKey: "fadeInOut")
-        
     }
     
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {

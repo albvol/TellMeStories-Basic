@@ -8,21 +8,23 @@
 
 import AVFoundation
 
+/* synthesizer.speak(utterance!) fa crashare l'app quando viene utilizzato in restartSpeaking() */
 class TextToSpeech {
     
     let synthesizer = AVSpeechSynthesizer()
+    var utterance: AVSpeechUtterance?
     
     func toSpeech(text: String, inLanguage: String, atRate: Float) {
         
-        let utterance = AVSpeechUtterance(string: text)
-        utterance.voice = AVSpeechSynthesisVoice(language: inLanguage)
-        utterance.rate = atRate
+        utterance = AVSpeechUtterance(string: text)
+        utterance?.voice = AVSpeechSynthesisVoice(language: inLanguage)
+        utterance?.rate = atRate
         
-        self.synthesizer.speak(utterance)
+        self.synthesizer.speak(utterance!)
     }
     
     func pauseSpeaking() {
-        self.synthesizer.pauseSpeaking(at: AVSpeechBoundary.word)
+        synthesizer.pauseSpeaking(at: AVSpeechBoundary.word)
     }
     
     func stopSpeaking() {
@@ -31,6 +33,11 @@ class TextToSpeech {
     
     func continueSpeaking() {
         synthesizer.continueSpeaking()
+    }
+    
+    func restartSpeaking() {
+        synthesizer.stopSpeaking(at: AVSpeechBoundary.immediate)
+        //synthesizer.speak(utterance!)
     }
     
     func isSpeaking() -> Bool {
