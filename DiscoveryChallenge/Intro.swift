@@ -18,7 +18,7 @@ class Intro: SKScene {
     private let TAG = "Intro"
     private var background: ParralaxSprite?
     
-    func setSequence(size: CGSize, usingImage assetName: String, text: String, actorPic resourceName: String) {
+    func setSequence(size: CGSize, usingImage assetName: String, text: String,text2: String, actorPic resourceName: String) {
         
         self.anchorPoint = CGPoint(x: 0.5, y:0.5)
         
@@ -39,6 +39,26 @@ class Intro: SKScene {
         let introText = ReadableSprite(nameOfTextArea:"introText", withSize: sizeOfTextArea, withText: text, fontSize: CGFloat(30), onLayer: CGFloat(1))
         introText.position.x = frame.minX + (sizeOfTextArea.width/2) + 16
         addChild(introText)
+        
+        //Prepare the size of the Text Sprite
+        sizeOfTextArea = size
+        sizeOfTextArea.height = frame.height
+        
+        //Create, Poisition and Add to the Scene the Text Readable Sprite
+        let introText2 = ReadableSprite(nameOfTextArea:"introText2", withSize: sizeOfTextArea, withText: text2, fontSize: CGFloat(30), onLayer: CGFloat(1))
+        introText2.position.x = frame.minX + (sizeOfTextArea.width/2) + 16
+        introText2.position.y = introText.frame.minY - 16
+        addChild(introText2)
+        
+        //Create, Poisition and Add to the Scene the Label "Start"
+        let label = SKLabelNode(fontNamed: "Chalkduster")
+        label.name = "next"
+        label.position = introText2.position
+        label.position.y = introText2.frame.minY + 16
+        label.zPosition = 1
+        label.fontColor = SKColor.white
+        label.text = "CONTINUA"
+        addChild(label)
     }
     
     override func didMove(to view: SKView) {}

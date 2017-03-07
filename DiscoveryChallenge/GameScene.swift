@@ -38,9 +38,10 @@ class GameScene: SKScene {
         //Create, Poisition and Add to the Scene the Label "Start"
         let label = SKLabelNode(fontNamed: "Chalkduster")
         label.name = "start"
+        label.fontSize = CGFloat(52)
         label.zPosition = 1
-        label.color = SKColor.black
-        label.text = "INIZIA"
+        label.fontColor = SKColor.white
+        label.text = "Inizia"
         addChild(label)
     }
     

@@ -27,20 +27,18 @@ class DraggableSprite: InteractionableSprite {
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         super.touchesBegan(touches, with: event)
-
         print(TAG, "touchesBegan")
     }
     
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
         super.touchesEnded(touches, with: event)
-        
         print(TAG, "touchesEnded")
     }
     
     override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
         super.touchesMoved(touches, with: event)
-
         print(TAG, "touchesMoved")
+        
         for t in touches {
             let positionInScene = t.location(in: self)
             let previousPosition = t.previousLocation(in: self)
