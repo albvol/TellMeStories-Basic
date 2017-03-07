@@ -13,13 +13,22 @@ class TextToSpeech {
     
     let synthesizer = AVSpeechSynthesizer()
     var utterance: AVSpeechUtterance?
+    var text, inLanguage: String?
+    var atRate: Float?
     
     func toSpeech(text: String, inLanguage: String, atRate: Float) {
         
-        utterance = AVSpeechUtterance(string: text)
-        utterance?.voice = AVSpeechSynthesisVoice(language: inLanguage)
-        utterance?.rate = atRate
+        self.text = text
+        self.inLanguage = inLanguage
+        self.atRate = atRate
         
+        speech()
+    }
+    
+    func speech() {
+        utterance = AVSpeechUtterance(string: self.text!)
+        utterance?.voice = AVSpeechSynthesisVoice(language: self.inLanguage)
+        utterance?.rate = self.atRate!
         self.synthesizer.speak(utterance!)
     }
     
@@ -37,7 +46,7 @@ class TextToSpeech {
     
     func restartSpeaking() {
         synthesizer.stopSpeaking(at: AVSpeechBoundary.immediate)
-        //synthesizer.speak(utterance!)
+        speech()
     }
     
     func isSpeaking() -> Bool {
