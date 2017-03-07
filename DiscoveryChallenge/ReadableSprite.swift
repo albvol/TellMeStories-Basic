@@ -49,7 +49,7 @@ class ReadableSprite: SKSpriteNode{
     //Place the label to show the text
     func addText(nameOfTextArea name: String, text t: String, fontSize fSize: CGFloat, onLayer layer: CGFloat) {
         
-        let spacePerLetter = 20
+        let spacePerLetter = 18
         let totalWidthOfText = t.characters.count * spacePerLetter
         let numberOfRow: Int = (totalWidthOfText / Int(super.size.width)) + 1
         let charactersForRow: Int = t.characters.count / numberOfRow

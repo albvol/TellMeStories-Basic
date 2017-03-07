@@ -22,7 +22,7 @@ class GameScene: SKScene {
         
         //Create, Poisition and Add to the Scene the Sound Sprite
         sound = Sprite(usingImage: "ActiveSound", referredWithName: "sound", withAlpha: CGFloat(1.0), onLayer: CGFloat(1))
-        sound?.position = CGPoint(x: -(view.frame.width/2 - (sound?.frame.width)!), y: -(view.frame.height/2 - (sound?.frame.height)!))
+        sound?.position = CGPoint(x:-(view.frame.width/2) + (((sound?.frame.width)!)/2) ,y: -(view.frame.height/2) + (((sound?.frame.height)!)/2))
         addChild(sound!)
         
         //Create, Poisition and Add to the Scene the Title InteractionableSprite
@@ -32,7 +32,7 @@ class GameScene: SKScene {
         
         //Create, Poisition and Add to the Scene the Language Label Sprite
         language = Sprite(usingImage: "Italian", referredWithName: "language", withAlpha: CGFloat(1.0), onLayer: CGFloat(1))
-        language?.position = CGPoint(x: view.frame.width/2 - (language?.frame.width)!, y: -(view.frame.height/2 - (language?.frame.height)!))
+        language?.position = CGPoint(x: (view.frame.width/2) - (((language?.frame.width)!)/2) - 16 ,y: -(view.frame.height/2) + (((language?.frame.height)!)/2) + 16)
         addChild(language!)
         
         //Create, Poisition and Add to the Scene the Label "Start"

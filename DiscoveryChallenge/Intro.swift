@@ -28,7 +28,7 @@ class Intro: SKScene {
         
         //Create, Poisition and Add to the Scene the Actor Sprite
         let actor = Sprite(usingImage: resourceName, referredWithName: "actor", withAlpha: CGFloat(1.0), onLayer: CGFloat(1))
-        actor.position.x = frame.maxX - actor.size.width
+        actor.position.x = frame.maxX - (actor.size.width/2) - 16
         background?.addChild(actor)
         
         //Prepare the size of the Text Sprite
@@ -37,7 +37,7 @@ class Intro: SKScene {
         
         //Create, Poisition and Add to the Scene the Text Readable Sprite
         let introText = ReadableSprite(nameOfTextArea:"introText", withSize: sizeOfTextArea, withText: text, fontSize: CGFloat(30), onLayer: CGFloat(1))
-        introText.position.x = frame.minX + 50
+        introText.position.x = frame.minX + (sizeOfTextArea.width/2) + 16
         addChild(introText)
     }
     
