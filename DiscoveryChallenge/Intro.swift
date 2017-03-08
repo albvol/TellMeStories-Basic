@@ -38,6 +38,7 @@ class Intro: SKScene {
         //Create, Poisition and Add to the Scene the Text Readable Sprite
         let introText = ReadableSprite(nameOfTextArea:"introText", withSize: sizeOfTextArea, withText: text, fontSize: CGFloat(30), onLayer: CGFloat(1))
         introText.position.x = frame.minX + (sizeOfTextArea.width/2) + 16
+        introText.zPosition = 10
         addChild(introText)
         
         //Prepare the size of the Text Sprite
@@ -46,15 +47,16 @@ class Intro: SKScene {
         
         //Create, Poisition and Add to the Scene the Text Readable Sprite
         let introText2 = ReadableSprite(nameOfTextArea:"introText2", withSize: sizeOfTextArea, withText: text2, fontSize: CGFloat(30), onLayer: CGFloat(1))
-        introText2.position.x = frame.minX + (sizeOfTextArea.width/2) + 16
-        introText2.position.y = introText.frame.minY - 16
+        introText2.position = introText.position
+        introText2.position.y = introText.frame.minY - 2*introText2.size.height - 16
+        introText2.zPosition = 11
         addChild(introText2)
         
         //Create, Poisition and Add to the Scene the Label "Start"
         let label = SKLabelNode(fontNamed: "Chalkduster")
         label.name = "next"
         label.position = introText2.position
-        label.position.y = introText2.frame.minY + 16
+        label.position.y = introText2.frame.minY + 100
         label.zPosition = 1
         label.fontColor = SKColor.white
         label.text = "CONTINUA"

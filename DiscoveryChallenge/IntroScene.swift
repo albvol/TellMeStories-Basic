@@ -22,14 +22,43 @@ class IntroScene: Intro {
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         print(TAG, "touchesBegan")
         super.touchesBegan(touches, with: event)
+        
+        for t in touches {
+            let node = self.atPoint(t.location(in: self))
+            
+            if node.name != nil {
+                switch node.name! {
+                case "next":
+                    print("HO PREMUTO ", node.name!)
+                    GameViewController.openScene(nextScene: MainMapScene(size: self.size))
+                default:
+                    node.touchesBegan(touches, with: event)
+                }
+            }
+
+        }
+        
     }
     
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
         print(TAG, "touchesEnded")
+        
+        for t in touches {
+            let node = self.atPoint(t.location(in: self))
+            
+            if node.name != nil {
+                switch node.name! {
+                default:
+                    node.touchesEnded(touches, with: event)
+                }
+            }
+        }
     }
     
     override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
         print(TAG, "touchesMoved")
+        
+        for t in touches { self.atPoint(t.location(in: self)).touchesMoved(touches, with: event) }
     }
     
     override func update(_ currentTime: TimeInterval) {
