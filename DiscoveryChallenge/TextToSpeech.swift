@@ -11,7 +11,7 @@ import AVFoundation
 /* synthesizer.speak(utterance!) fa crashare l'app quando viene utilizzato in restartSpeaking() */
 class TextToSpeech {
     
-    let synthesizer = AVSpeechSynthesizer()
+    var synthesizer = AVSpeechSynthesizer()
     var utterance: AVSpeechUtterance?
     var text, inLanguage: String?
     var atRate: Float?
@@ -29,7 +29,7 @@ class TextToSpeech {
         utterance = AVSpeechUtterance(string: self.text!)
         utterance?.voice = AVSpeechSynthesisVoice(language: self.inLanguage)
         utterance?.rate = self.atRate!
-        self.synthesizer.speak(utterance!)
+        synthesizer.speak(utterance!)
     }
     
     func pauseSpeaking() {

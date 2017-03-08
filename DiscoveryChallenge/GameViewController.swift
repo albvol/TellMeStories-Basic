@@ -13,6 +13,10 @@ import AVFoundation
 
 class GameViewController: UIViewController {
     
+    static let fadeIn = SKAction.init(named: "FadeIn")!
+    static let showUp = SKAction.init(named: "showUp")!
+    static let showUp2 = SKAction.init(named: "showUp2")!
+    static let showToolbar = SKAction.init(named: "showToolbar")!
     static var scene: SKScene?
     
     override func viewDidLoad() {
@@ -28,7 +32,7 @@ class GameViewController: UIViewController {
             //view.showsFPS = true
             //view.showsNodeCount = true
             
-            Sound.init(usingFile: "tune")
+            Sound.init(usingFile: "tune", withExtension: "mp3")
             Language.init()
             Language.change()
         }

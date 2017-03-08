@@ -10,13 +10,10 @@ import Foundation
 import SpriteKit
 import GameplayKit
 
-/*
-TESTO INTRO ACCENTATO: "Nell’Argòlide, storica regione dell’antica Grecia, c'era una valle chiamata Nemea, dove viveva uno spaventoso leone, nato da Tifone e da Echidna, che terrorizzava tutti gli uomini. Questo leone era invulnerabile, nessuna arma era capace di scalfire la sua durissima pelle; zanne ed artigli erano dure quanto il metallo."
- */
 class ReadableSprite: SKSpriteNode{
     
     private let TAG = "ReadableSprite"
-    private let tts = TextToSpeech()
+    private var tts = TextToSpeech()
     
     init(nameOfTextArea name: String, withSize size: CGSize, withText text: String, fontSize fSize: CGFloat, onLayer layer: CGFloat){
         let blank = SKTexture(imageNamed: "Blank")

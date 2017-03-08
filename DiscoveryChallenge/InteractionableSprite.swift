@@ -13,28 +13,25 @@ import CoreMotion
 
 class InteractionableSprite: Sprite {
     
+    private let TAG = "InteractionableSprite"
+    
     static let downScale = SKAction.init(named: "DownScale")!
     static let upScale = SKAction.init(named: "UpScale")!
     static let levitate = SKAction.init(named: "levitate")!
-    var flag = false
-    //static let interactionSound = SKAction.playSoundFileNamed("ding.wav", waitForCompletion: true);
-    private let TAG = "InteractionableSprite"
     
+    private var flag: Bool = false
+    //static let interactionSound = SKAction.playSoundFileNamed("ding.wav", waitForCompletion: true);
+
     override init(usingImage assetName: String, referredWithName name: String, withAlpha alpha: CGFloat, onLayer z: CGFloat) {
-        
         super.init(usingImage: assetName, referredWithName: name, withAlpha: alpha, onLayer: z)
-        run(InteractionableSprite.levitate, withKey: "fadeInOut")
+        run(InteractionableSprite.levitate)
     }
     
-    init(usingImage assetName: String, referredWithName name: String, withAlpha alpha: CGFloat, onLayer z: CGFloat,type flag: Bool)
-    {
+    init(usingImage assetName: String, referredWithName name: String, withAlpha alpha: CGFloat, onLayer z: CGFloat, type flag: Bool) {
         super.init(usingImage: assetName, referredWithName: name, withAlpha: alpha, onLayer: z)
-
-        if(flag == true)
-        {
-            self.flag = true
-            run(InteractionableSprite.levitate,withKey: "fadeInOut")
-        }
+        self.flag = flag
+        
+        if flag { run(InteractionableSprite.levitate) }
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -44,22 +41,18 @@ class InteractionableSprite: Sprite {
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         print(TAG, "touchesBegan")
         //run(interactionSound)
-        if(flag == false){
-        run(InteractionableSprite.upScale, withKey: "fadeInOut")
-        }
-        print(flag)
+        
+        if !self.flag { run(InteractionableSprite.upScale) }
     }
     
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
         print(TAG, "touchesEnded")
         //run(interactionSound)
-        if flag == false{
-        run(InteractionableSprite.downScale, withKey: "fadeInOut")
-        }
+        
+        if !self.flag { run(InteractionableSprite.downScale) }
     }
     
     override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
-        
         print(TAG, "touchesMoved")
     }
     
