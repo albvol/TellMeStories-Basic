@@ -92,7 +92,7 @@ class MapScene: SKScene {
             if node.name != nil {
                 switch node.name! {
                 case "micene":
-                    openScene(nextScene: IntroScene(size: scene!.size))
+                    openScene(nextScene: SmallVillageScene(size: scene!.size))
                 default:
                     node.touchesBegan(touches, with: event)
                 }

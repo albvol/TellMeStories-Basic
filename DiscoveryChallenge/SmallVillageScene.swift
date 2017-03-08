@@ -17,17 +17,20 @@ class SmallVillageScene: SKScene {
     override func didMove(to view: SKView) {
         
         
+        
         //Add to the Scene the Background
         addChild(background)
         
         
         //Add to the Scene the firstHouse
-        let house1 = Sprite(usingImage: "Casa1", referredWithName: "house1", withAlpha: CGFloat(1.0), onLayer: CGFloat(1))
+        let house1 = Sprite(usingImage: "House1", referredWithName: "house1", withAlpha: CGFloat(1.0), onLayer: CGFloat(1))
         house1.position.x = frame.maxX - (house1.size.width/2) - 15
-        
-        
+        house1.zPosition = 6
+        addChild(house1)
         
         /*
+        
+        
          //Add to the Scene the Background
          addChild(background)
          
