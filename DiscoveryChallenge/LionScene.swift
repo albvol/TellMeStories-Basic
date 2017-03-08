@@ -7,3 +7,16 @@
 //
 
 import Foundation
+import GameKit
+import SpriteKit
+
+class LionScene: SKScene {
+    
+    private var background = ParralaxSprite(usingImage: "LionBackground", referredWithName: "background")
+    private var sound, language: Sprite?
+    
+    override func didMove(to view: SKView) {
+
+    }
+
+}
