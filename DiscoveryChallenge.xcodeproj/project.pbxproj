@@ -30,6 +30,7 @@
 		2AF635AE1E6987AB00C18708 /* ParallaxSprite.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AF635AD1E6987AB00C18708 /* ParallaxSprite.swift */; };
 		2AF635B01E6987D500C18708 /* InteractionableSprite.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AF635AF1E6987D500C18708 /* InteractionableSprite.swift */; };
 		2AF635B21E6987ED00C18708 /* DraggableSprite.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AF635B11E6987ED00C18708 /* DraggableSprite.swift */; };
+		6C324AC21E70180600C40E23 /* SmallVillageScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C324AC11E70180600C40E23 /* SmallVillageScene.swift */; };
 		F33E0B6B1E6FF81700D2C837 /* MainMapScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = F33E0B6A1E6FF81700D2C837 /* MainMapScene.swift */; };
 		F3624A881E66F812005C7C3A /* TextToSpeech.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3624A871E66F812005C7C3A /* TextToSpeech.swift */; };
 		F36B69361E6D5E1A00A16A3A /* MapScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = F36B69351E6D5E1A00A16A3A /* MapScene.swift */; };
@@ -83,6 +84,7 @@
 		2AF635AD1E6987AB00C18708 /* ParallaxSprite.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParallaxSprite.swift; sourceTree = "<group>"; };
 		2AF635AF1E6987D500C18708 /* InteractionableSprite.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InteractionableSprite.swift; sourceTree = "<group>"; };
 		2AF635B11E6987ED00C18708 /* DraggableSprite.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DraggableSprite.swift; sourceTree = "<group>"; };
+		6C324AC11E70180600C40E23 /* SmallVillageScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SmallVillageScene.swift; sourceTree = "<group>"; };
 		F33E0B6A1E6FF81700D2C837 /* MainMapScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainMapScene.swift; sourceTree = "<group>"; };
 		F3624A871E66F812005C7C3A /* TextToSpeech.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextToSpeech.swift; sourceTree = "<group>"; };
 		F36B69351E6D5E1A00A16A3A /* MapScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapScene.swift; sourceTree = "<group>"; };
@@ -192,6 +194,7 @@
 				2AE24CC21E65D5B600A6F7B8 /* GameScene.swift */,
 				2A09375D1E6DFFB100A6C5D7 /* IntroScene.swift */,
 				F33E0B6A1E6FF81700D2C837 /* MainMapScene.swift */,
+				6C324AC11E70180600C40E23 /* SmallVillageScene.swift */,
 				2AE24CC41E65D5B600A6F7B8 /* GameViewController.swift */,
 				2AE24CBC1E65D5B600A6F7B8 /* AppDelegate.swift */,
 				2A0937681E6E26BE00A6C5D7 /* IntroScene.sks */,
@@ -389,6 +392,7 @@
 				2AF635AE1E6987AB00C18708 /* ParallaxSprite.swift in Sources */,
 				2A09375E1E6DFFB100A6C5D7 /* IntroScene.swift in Sources */,
 				2A0937631E6E07BE00A6C5D7 /* ReadableSprite.swift in Sources */,
+				6C324AC21E70180600C40E23 /* SmallVillageScene.swift in Sources */,
 				2ACF7B6A1E67616F00C30525 /* Sprite.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
