@@ -24,7 +24,7 @@ class MapScene: SKScene {
         sky.size = CGSize(width: randWidth1, height: randWidth1/aspectRatio1)
         addChild(sky)
         
-        let map = PanSprite(usingImage: "Map", referredWithName: "map", withAlpha: CGFloat(1.0), onLayer: CGFloat(1))
+        let map = Sprite(usingImage: "Map", referredWithName: "map", withAlpha: CGFloat(1.0), onLayer: CGFloat(1))
         
         let fish = Sprite(usingImage: "Fish", referredWithName: "fish", withAlpha: CGFloat(0.6), onLayer: CGFloat(1))
         fish.position.y = 140
