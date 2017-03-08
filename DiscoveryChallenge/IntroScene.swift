@@ -18,6 +18,12 @@ class IntroScene: Intro {
         self.anchorPoint = CGPoint(x: 0.5, y:0.5)
         setSequence(size: size, usingImage: "Overlay", text: "Nell’Argolide, storica regione dell’antica Grecia, c’era una valle chiamata Nemea dove viveva uno spaventoso leone, nato da Tifone e da Echidna, che terrorizzava tutti gli uomini. Questo leone era invulnerabile, nessuna arma era capace di scalfire la sua durissima pelle; zanne ed artigli erano dure quanto il metallo.", text2: "Uniamoci ad Eracle in questa emozionante avventura e scopriamo la nascita della costellazione del leone. Tutto ebbe inizio a Micene...", actorPic: "Narratrice")
     }
+    
+    func openScene(nextScene: SKScene) {
+        let transition = SKTransition.reveal(with: .left, duration: 2.0)
+        nextScene.scaleMode = .aspectFill
+        scene?.view?.presentScene(nextScene, transition: transition)
+    }
         
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         print(TAG, "touchesBegan")
@@ -30,7 +36,7 @@ class IntroScene: Intro {
                 switch node.name! {
                 case "next":
                     print("HO PREMUTO ", node.name!)
-                    GameViewController.openScene(nextScene: MainMapScene(size: self.size))
+                    openScene(nextScene: MainMapScene(size: self.size))
                 default:
                     node.touchesBegan(touches, with: event)
                 }
