@@ -35,7 +35,6 @@ class MapScene: SKScene {
         
         //Show the Toolbar
         if (Language.getLanguage() == "it-IT")
-        
         {showToolbar(withHint: "Benvenuto! Dirigiti a Micene!")}
         else
         {showToolbar(withHint: "Welcome hero, head to Mycenae")}
@@ -137,7 +136,7 @@ class MapScene: SKScene {
                 case "cavern":
                     openScene(nextScene: LionScene(size: scene!.size))
                 case "forest":
-                    openScene(nextScene: MapGreeceScene(size: scene!.size))
+                    openScene(nextScene: ForestScene(size: scene!.size))
                 default:
                     node.touchesBegan(touches, with: event)
                 }

@@ -10,9 +10,6 @@ import Foundation
 import SpriteKit
 import GameplayKit
 
-/* Da Aggiustare!
-   Posizione dell'actor e dell'introText 
-*/
 class Intro: SKScene {
     
     private let TAG = "Intro"
