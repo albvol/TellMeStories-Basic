@@ -18,6 +18,7 @@ class Lion: SKSpriteNode{
         self.physicsBody = SKPhysicsBody(circleOfRadius: lion.size().width)
         self.physicsBody?.isDynamic = false
         self.name = "Lion"
+        self.zPosition = 20
         self.physicsBody?.categoryBitMask = BodyType.lion.rawValue
         self.physicsBody?.allowsRotation = false
         self.physicsBody?.collisionBitMask = BodyType.bowArrow.rawValue

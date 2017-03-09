@@ -18,10 +18,11 @@ class Arrow: SKSpriteNode {
         self.physicsBody = SKPhysicsBody(rectangleOf: size)
         self.physicsBody?.isDynamic = false
         self.name = "Arrow"
-        self.physicsBody?.categoryBitMask = BodyType.bowArrow.rawValue
+        self.zPosition = 20
         self.physicsBody?.allowsRotation = false
-        self.physicsBody?.collisionBitMask = BodyType.lion.rawValue
+        self.physicsBody?.categoryBitMask = BodyType.bowArrow.rawValue
         self.physicsBody?.contactTestBitMask = BodyType.lion.rawValue
+        self.physicsBody?.collisionBitMask = 0
     }
     
     required init?(coder aDecoder: NSCoder) {
