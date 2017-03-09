@@ -30,9 +30,18 @@ class ForestScene: SKScene {
         narratrice.position.y = -self.frame.height/4 - narratrice.frame.height/4
         //narratrice.setScale(0.5)
         
-       
+       var text = ""
+        var txtTool = ""
         
-        var text = "Il leone è passato da qui , sei vicino"
+        if (Language.getLanguage() == "it-IT")
+        {   text = "Il leone è passato da qui , sei vicino"
+            txtTool = "Ci sei quasi, ma non ti allontanare troppo!"
+        }
+        else
+        {   text = "The Lion was here! Be careful!"
+            txtTool = "You're almost there, but do not stray too far!"
+        }
+        
         
         //zeus.addChild(fumettoPS)
         
@@ -49,7 +58,7 @@ class ForestScene: SKScene {
         
         
         addChild(narratrice)
-        showToolbar(withHint: "Sei quasi vicino!")
+        showToolbar(withHint: txtTool)
     }
     
     func showToolbar(withHint text:String){
