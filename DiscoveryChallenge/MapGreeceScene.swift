@@ -6,10 +6,8 @@
 //  Copyright © 2017 Alberto Volpe. All rights reserved.
 //
 
-import UIKit
 import SpriteKit
 import GameplayKit
-import CoreMotion
 
 class MapGreeceScene: SKScene {
     private let tts = TextToSpeech()
