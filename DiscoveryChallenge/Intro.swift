@@ -45,7 +45,13 @@ class Intro: SKScene {
         label.position.y = introText.frame.minY - 100
         label.zPosition = 1
         label.fontColor = SKColor.white
-        label.text = "CONTINUA"
+        
+        if (Language.getLanguage() == "it-IT") {
+            label.text = "CONTINUA"
+        }else{
+            label.text = "CONTINUE"
+        }
+
         super.addChild(label)
     }
     
