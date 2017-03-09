@@ -40,7 +40,27 @@ class ErcoleAtMicene: SKScene {
         fumettoSX.position.x = 150
         fumettoSX.setScale(0.5)
        
-        var text = "Ercole, in Nemea c'è un terribile leone che terrorizza il popolo. Voglio che tu vada lì e mi porti la sua pelliccia"
+        
+        //localization
+        var text = ""
+        var textHercules = ""
+        var txtTool = ""
+         if (Language.getLanguage() == "it-IT")
+        
+         { text = "Ercole, in Nemea c'è un terribile leone che terrorizza il popolo. Voglio che tu vada lì e mi porti la sua pelliccia"
+            textHercules = "Conta su di me!"
+            txtTool = "Sei arrivato a Micene!"
+            
+        }
+        else
+         {
+            text = "Heracles, in Nemea there is a terrible Lion terrorizing the people. I want you to go there and bring to Zeus his fur"
+            textHercules = "Count on me!"
+        
+            txtTool = "You are in Mycenae!"
+        }
+        
+        
          fumettoSX.addText(Text: text, onLayer: CGFloat(2))
         zeus.addChild(fumettoSX)
         //zeus.addChild(fumettoPS)
@@ -49,19 +69,18 @@ class ErcoleAtMicene: SKScene {
         fumettoDX.position.y = 250
         fumettoDX.position.x = -150
         fumettoDX.setScale(0.5)
-        fumettoDX.addText(Text: "Sarà fatto!", onLayer: CGFloat(1))
+        fumettoDX.addText(Text: textHercules, onLayer: CGFloat(1))
         ercole.addChild(fumettoDX)
-        tts.toSpeech(text: text, inLanguage: "it-IT", atRate: 0.45)
+        tts.toSpeech(text: text, inLanguage: Language.getLanguage(), atRate: 0.45)
         
-        text = "Sarà fatto!"
         
         DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(2), execute: {
             self.addChild(ercole)
-            self.tts.toSpeech(text: text, inLanguage: "it-IT", atRate: 0.45)
+            self.tts.toSpeech(text: textHercules, inLanguage: Language.getLanguage(), atRate: 0.45)
         })
         
         addChild(zeus)
-        showToolbar(withHint: "Sei arrivato a Micene!")
+        showToolbar(withHint: txtTool)
     }
     
     func showToolbar(withHint text:String){

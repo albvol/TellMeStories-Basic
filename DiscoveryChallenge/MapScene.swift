@@ -34,7 +34,12 @@ class MapScene: SKScene {
         sun.run(GameViewController.fadeIn)
         
         //Show the Toolbar
-        showToolbar(withHint: "Benvenuto! Dirigiti a Micene!")
+        if (Language.getLanguage() == "it-IT")
+        
+        {showToolbar(withHint: "Benvenuto! Dirigiti a Micene!")}
+        else
+        {showToolbar(withHint: "Welcome hero, head to Mycenae")}
+        
         
         //Set and show the Map Sprite with the elements
         let map = PanSprite(usingImage: "Map", referredWithName: "map", withAlpha: CGFloat(1.0), onLayer: CGFloat(1))

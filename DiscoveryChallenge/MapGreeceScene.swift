@@ -24,7 +24,41 @@ class MapGreeceScene: SKScene {
         
         let color = SKColor.black
         
-        let regione1 = SKLabelNode(text: "regione1")
+        
+        //localization
+        
+        var txtR1 = ""
+        var txtR2 = ""
+        var txtR3 = ""
+        var txtR4 = ""
+        var txtR5 = ""
+        var txtTool = ""
+        if (Language.getLanguage() == "it-IT")
+        {
+             txtR1 = "Tessaglia"
+             txtR2 = "Epiro"
+             txtR3 = "Etolia"
+             txtR4 = "Macedonia"
+             txtR5 = "Argolide"
+            txtTool = "Conduci l'eroe a Micene!"
+        }
+        
+        else
+        {
+            txtR1 = "Thessaly"
+            txtR2 = "Epirus"
+            txtR3 = "Aetolia"
+            txtR4 = "Macedonia"
+            txtR5 = "Argolid"
+            txtTool = "Take Heracles to Mycenae"
+        }
+        
+        
+        
+        
+        
+        
+        let regione1 = SKLabelNode(text: txtR1 )
         regione1.fontSize = 24
         regione1.position.x = -120
         regione1.position.y = 145
@@ -32,7 +66,7 @@ class MapGreeceScene: SKScene {
         regione1.zPosition = 1
         addChild(regione1)
         
-        let regione2 = SKLabelNode(text: "regione2")
+        let regione2 = SKLabelNode(text: txtR2 )
         regione2.fontSize = 18
         regione2.position.x = -230
         regione2.position.y = 145
@@ -40,7 +74,7 @@ class MapGreeceScene: SKScene {
         regione2.zPosition = 2
         addChild(regione2)
         
-        let regione3 = SKLabelNode(text: "regione3")
+        let regione3 = SKLabelNode(text: txtR3 )
         regione3.fontSize = 24
         regione3.position.x = -100
         regione3.position.y = 60
@@ -49,7 +83,7 @@ class MapGreeceScene: SKScene {
         regione3.zRotation = -7
         addChild(regione3)
         
-        let regione4 = SKLabelNode(text: "regione4")
+        let regione4 = SKLabelNode(text: txtR4 )
         regione4.fontSize = 16
         regione4.position.x = -160
         regione4.position.y = 205
@@ -57,7 +91,7 @@ class MapGreeceScene: SKScene {
         regione4.fontColor = color
         addChild(regione4)
         
-        let regione5 = SKLabelNode(text: "Argolide")
+        let regione5 = SKLabelNode(text: txtR5 )
         regione5.fontSize = 26
         regione5.position.x = -130
         regione5.position.y = -55
@@ -123,7 +157,7 @@ class MapGreeceScene: SKScene {
          addChild(narratrice)
          showToolbar(withHint: "Sei quasi vicino!")
          */
-        showToolbar(withHint: "Conduci l'eroe a Micene!")
+        showToolbar(withHint: txtTool)
         //
     }
     

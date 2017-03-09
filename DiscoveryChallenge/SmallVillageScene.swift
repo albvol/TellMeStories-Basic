@@ -75,9 +75,18 @@ class SmallVillageScene: SKScene {
         narratrice.position.y = -self.frame.height/4 - narratrice.frame.height/4
         //narratrice.setScale(0.5)
         
+        //localization 
+        var txt = ""
+        var txtTool = ""
+        if (Language.getLanguage() == "it-IT")
+
+        { txt = "Il leone ha terrorizato questo villaggio, sei vicino, continua a cercare"
+          txtTool = "Un piccolo villaggio…"
+        }
+        else
         
-        
-        let text = "Il leone ha terrorizato questo villaggio, sei vicino, continua a cercare"
+        {   txt = "The Lion has terrorized this village, you are close, keeps trying"
+            txtTool = "A small village..."}
         
         //zeus.addChild(fumettoPS)
         
@@ -85,9 +94,9 @@ class SmallVillageScene: SKScene {
         fumettoDX.position.y = 250
         fumettoDX.position.x = -150
         fumettoDX.setScale(0.5)
-        fumettoDX.addText(Text: text, onLayer: CGFloat(1))
+        fumettoDX.addText(Text: txt, onLayer: CGFloat(1))
         narratrice.addChild(fumettoDX)
-        tts.toSpeech(text: text, inLanguage: "it-IT", atRate: 0.45)
+        tts.toSpeech(text: txt, inLanguage: Language.getLanguage(), atRate: 0.45)
         
         
         
@@ -126,7 +135,7 @@ class SmallVillageScene: SKScene {
          label.text = "Inizia"
          addChild(label)
          */
-        showToolbar(withHint: "Un piccolo villaggio...")
+        showToolbar(withHint: txtTool)
     }
     
     func showToolbar(withHint text:String){
