@@ -13,7 +13,7 @@ import CoreMotion
 class ForestScene: SKScene {
     
     private let tts = TextToSpeech()
-    private let foresta = ParralaxSprite(usingImage: "Forest", referredWithName: "forest")
+    private let foresta = ParralaxSprite(usingImage: "Foresta2", referredWithName: "forest2")
     
     override func didMove(to view: SKView) {
     
@@ -27,7 +27,8 @@ class ForestScene: SKScene {
         let narratrice = Sprite(usingImage: "Narratrice", referredWithName: "narratrice", withAlpha: CGFloat(1.0), onLayer: CGFloat(1))
         
         narratrice.position.x = self.frame.width/4 - narratrice.frame.width/2
-        narratrice.position.y = -self.frame.height/4 - narratrice.frame.height/4
+        narratrice.position.y = self.frame.height/3 - narratrice.frame.height/2
+        
         //narratrice.setScale(0.5)
         
         
@@ -45,7 +46,7 @@ class ForestScene: SKScene {
         }
         
         
-        //zeus.addChild(fumettoPS)
+       
         
         let fumettoDX = InteractionableSprite(usingImage: "FumettoDx", referredWithName: "fumettoDX", withAlpha: CGFloat(1.0), onLayer: CGFloat(1), type: true)
         fumettoDX.position.y = 250
@@ -57,6 +58,11 @@ class ForestScene: SKScene {
     
         addChild(narratrice)
         showToolbar(withHint: txtTool)
+        
+           Sound.init(usingFile: "ruscello", withExtension: "mp3")
+           
+    
+       
     }
     
     func showToolbar(withHint text:String){
@@ -73,7 +79,7 @@ class ForestScene: SKScene {
         hintBar.position.x = frame.maxX - hintBar.size.width/2 - mapButton.size.width
         
         let label = SKLabelNode(fontNamed: "Chalkduster")
-        label.fontSize = 23
+        label.fontSize = 16
         label.name = name
         label.text = text
         label.zPosition = 10
