@@ -22,7 +22,7 @@ class Arrow: SKSpriteNode {
         self.physicsBody?.allowsRotation = false
         self.physicsBody?.categoryBitMask = BodyType.bowArrow.rawValue
         self.physicsBody?.contactTestBitMask = BodyType.lion.rawValue
-        self.physicsBody?.collisionBitMask = 0
+        self.physicsBody?.collisionBitMask = BodyType.lion.rawValue
     }
     
     required init?(coder aDecoder: NSCoder) {
