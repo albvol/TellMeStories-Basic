@@ -18,6 +18,7 @@ class GameViewController: UIViewController {
     static let showUp2 = SKAction.init(named: "showUp2")!
     static let showToolbar = SKAction.init(named: "showToolbar")!
     static var scene: SKScene?
+    static var MiceneVisited = false
     
     override func viewDidLoad() {
         super.viewDidLoad()

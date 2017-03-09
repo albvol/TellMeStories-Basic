@@ -45,23 +45,37 @@ class ErcoleAtMicene: SKScene {
         var text = ""
         var textHercules = ""
         var txtTool = ""
-         if (Language.getLanguage() == "it-IT")
         
-         { text = "Ercole, in Nemea c'è un terribile leone che terrorizza il popolo. Voglio che tu vada lì e mi porti la sua pelliccia"
-            textHercules = "Conta su di me!"
-            txtTool = "Sei arrivato a Micene!"
+        if(GameViewController.MiceneVisited){
             
+            switch Language.getLanguage(){
+                case "it-IT":
+                    text = "Ercole, in Nemea c'è un terribile leone che terrorizza il popolo. Voglio che tu vada lì e mi porti la sua pelliccia"
+                    textHercules = "Conta su di me!"
+                    txtTool = "Sei arrivato a Micene!"
+                default:
+                    text = "Heracles, in Nemea there is a terrible Lion terrorizing the people. I want you to go there and bring to Zeus his fur"
+                    textHercules = "Count on me!"
+                    txtTool = "You are in Mycenae!"
+            }
+            
+        }else{
+            
+            GameViewController.MiceneVisited = true;
+            switch Language.getLanguage(){
+                case "it-IT":
+                    text = "Ercole, in Nemea c'è un terribile leone che terrorizza il popolo. Voglio che tu vada lì e mi porti la sua pelliccia"
+                    textHercules = "Conta su di me!"
+                    txtTool = "Sei arrivato a Micene!"
+                default:
+                    text = "Heracles, in Nemea there is a terrible Lion terrorizing the people. I want you to go there and bring to Zeus his fur"
+                    textHercules = "Count on me!"
+                    txtTool = "You are in Mycenae!"
+            }
         }
-        else
-         {
-            text = "Heracles, in Nemea there is a terrible Lion terrorizing the people. I want you to go there and bring to Zeus his fur"
-            textHercules = "Count on me!"
-        
-            txtTool = "You are in Mycenae!"
-        }
         
         
-         fumettoSX.addText(Text: text, onLayer: CGFloat(2))
+        fumettoSX.addText(Text: text, onLayer: CGFloat(2))
         zeus.addChild(fumettoSX)
         //zeus.addChild(fumettoPS)
         
