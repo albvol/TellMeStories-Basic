@@ -22,6 +22,7 @@
 		2A6580431E70BD0A00AC3C46 /* Arrow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A6580411E70BD0A00AC3C46 /* Arrow.swift */; };
 		2A6580451E70BD3200AC3C46 /* LionScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A6580441E70BD3200AC3C46 /* LionScene.swift */; };
 		2A6B50821E6629E200308385 /* Actions.sks in Resources */ = {isa = PBXBuildFile; fileRef = 2A6B50801E6629E200308385 /* Actions.sks */; };
+		2A87AE541E71A895000AD72A /* MapGreeceScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A87AE531E71A895000AD72A /* MapGreeceScene.swift */; };
 		2A99F9321E65E0CC005CF438 /* tune.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 2A99F9311E65E0CC005CF438 /* tune.mp3 */; };
 		2ACF7B6A1E67616F00C30525 /* Sprite.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ACF7B691E67616F00C30525 /* Sprite.swift */; };
 		2AE24CBD1E65D5B600A6F7B8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AE24CBC1E65D5B600A6F7B8 /* AppDelegate.swift */; };
@@ -76,6 +77,7 @@
 		2A6580411E70BD0A00AC3C46 /* Arrow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Arrow.swift; sourceTree = "<group>"; };
 		2A6580441E70BD3200AC3C46 /* LionScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LionScene.swift; sourceTree = "<group>"; };
 		2A6B50801E6629E200308385 /* Actions.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Actions.sks; sourceTree = "<group>"; };
+		2A87AE531E71A895000AD72A /* MapGreeceScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapGreeceScene.swift; sourceTree = "<group>"; };
 		2A99F9311E65E0CC005CF438 /* tune.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = tune.mp3; sourceTree = "<group>"; };
 		2ACF7B691E67616F00C30525 /* Sprite.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Sprite.swift; sourceTree = "<group>"; };
 		2AE24CB91E65D5B600A6F7B8 /* DiscoveryChallenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DiscoveryChallenge.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -181,6 +183,7 @@
 			children = (
 				2A6580401E70BD0A00AC3C46 /* Lion.swift */,
 				2A6580411E70BD0A00AC3C46 /* Arrow.swift */,
+				2A87AE531E71A895000AD72A /* MapGreeceScene.swift */,
 			);
 			name = Temporaneo;
 			sourceTree = "<group>";
@@ -409,6 +412,7 @@
 				F3624A881E66F812005C7C3A /* TextToSpeech.swift in Sources */,
 				2A3475EC1E6DB79E00FD5376 /* Scene.swift in Sources */,
 				2AF635B21E6987ED00C18708 /* DraggableSprite.swift in Sources */,
+				2A87AE541E71A895000AD72A /* MapGreeceScene.swift in Sources */,
 				2A6580451E70BD3200AC3C46 /* LionScene.swift in Sources */,
 				2AE24CC51E65D5B600A6F7B8 /* GameViewController.swift in Sources */,
 				F36B69361E6D5E1A00A16A3A /* MapScene.swift in Sources */,
