@@ -41,6 +41,8 @@ class SmallVillageScene: SKScene {
         addChild(house1)
         
         
+        
+        
         //Add to the Scene the secondHouse
         let house2 = Sprite(usingImage: "House1", referredWithName: "house2", withAlpha: CGFloat(1.0), onLayer: CGFloat(1))
         house2.position.x = -(frame.maxX - (house2.size.width/4))
