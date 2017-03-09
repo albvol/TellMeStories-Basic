@@ -25,10 +25,10 @@ class ErcoleAtMicene: SKScene {
         tempio.size = CGSize(width: randWidth1, height: randWidth1/aspectRatio1)
         addChild(tempio)
         
-        let ercole = Sprite(usingImage: "Hercules", referredWithName: "hercules", withAlpha: CGFloat(1.0), onLayer: CGFloat(1))
+        let ercole = Sprite(usingImage: "Spartan", referredWithName: "spartan", withAlpha: CGFloat(1.0), onLayer: CGFloat(1))
         
-        ercole.position.x = self.frame.width/2 - ercole.frame.width/4
-        ercole.position.y = -self.frame.height/4 - ercole.frame.height/3
+        ercole.position.x = self.frame.width/2 - ercole.frame.width/4 + 10
+        ercole.position.y = -self.frame.height/4 - ercole.frame.height/3 + 130
         
         let zeus = Sprite(usingImage: "Zeus", referredWithName: "zeus", withAlpha: CGFloat(1.0), onLayer: CGFloat(1))
         
@@ -80,8 +80,8 @@ class ErcoleAtMicene: SKScene {
         //zeus.addChild(fumettoPS)
         
         let fumettoDX = InteractionableSprite(usingImage: "FumettoDx", referredWithName: "fumettoDX", withAlpha: CGFloat(1.0), onLayer: CGFloat(1), type: true)
-        fumettoDX.position.y = 250
-        fumettoDX.position.x = -150
+        fumettoDX.position.y = 160
+        fumettoDX.position.x = -190
         fumettoDX.setScale(0.5)
         fumettoDX.addText(Text: textHercules, onLayer: CGFloat(1))
         ercole.addChild(fumettoDX)

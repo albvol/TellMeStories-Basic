@@ -59,7 +59,7 @@ class ForestScene: SKScene {
         addChild(narratrice)
         showToolbar(withHint: txtTool)
         
-           Sound.init(usingFile: "ruscello", withExtension: "mp3")
+          // Sound.init(usingFile: "ruscello", withExtension: "mp3")
            
     
        

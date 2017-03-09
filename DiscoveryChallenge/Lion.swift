@@ -13,7 +13,7 @@ class Lion: SKSpriteNode{
     
     init() {
         
-        let lion = SKTexture(imageNamed: "box_2")
+        let lion = SKTexture(imageNamed: "Leone")
         super.init(texture: lion, color: UIColor.clear, size: lion.size())
         self.physicsBody = SKPhysicsBody(circleOfRadius: lion.size().width)
         self.physicsBody?.isDynamic = false
