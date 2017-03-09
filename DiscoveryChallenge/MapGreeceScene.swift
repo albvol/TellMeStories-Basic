@@ -125,6 +125,7 @@ class MapGreeceScene: SKScene {
         addChild(narratrice)
         showToolbar(withHint: "Sei quasi vicino!")
      */
+        showToolbar(withHint: "Conduci l'eroe a Micene!")
     }
     
     func showToolbar(withHint text:String){
@@ -132,6 +133,7 @@ class MapGreeceScene: SKScene {
         mapButton.position.y = frame.maxY - mapButton.size.height/2 + 10
         mapButton.position.x = frame.maxX - mapButton.size.width/2
         mapButton.zPosition = 10
+        mapButton.alpha = 0
         addChild(mapButton)
         mapButton.run(GameViewController.showToolbar)
         
