@@ -126,7 +126,7 @@ class MapGreeceScene: SKScene {
         showToolbar(withHint: "Sei quasi vicino!")
      */
         showToolbar(withHint: "Conduci l'eroe a Micene!")
-        //
+        
     }
     
     func showToolbar(withHint text:String){
