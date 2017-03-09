@@ -16,8 +16,8 @@ class ForestScene: SKScene {
     private let foresta = ParralaxSprite(usingImage: "Forest", referredWithName: "forest")
     
     override func didMove(to view: SKView) {
-        print("Inizio la scena")
-        self.anchorPoint = CGPoint(x: 0.5, y:0.5)
+    
+         self.anchorPoint = CGPoint(x: 0.5, y:0.5)
         
         let aspectRatio1 = view.frame.width/view.frame.height
         let randWidth1 = CGFloat(view.frame.width + 50.0)

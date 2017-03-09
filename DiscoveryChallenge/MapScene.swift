@@ -63,7 +63,7 @@ class MapScene: SKScene {
         forest.position.y = 100
         forest.position.x = 550
         forest.setScale(0.3)
-        map.addChild(forest)
+          map.addChild(forest)
         
         map.position.y = frame.minY + map.size.height/2 - 200
         addChild(map)
