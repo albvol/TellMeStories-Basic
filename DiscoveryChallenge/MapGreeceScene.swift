@@ -26,7 +26,7 @@ class MapGreeceScene: SKScene {
         
         let color = SKColor.black
         
-        let regione1 = SKLabelNode(text: "Tessalia")
+        let regione1 = SKLabelNode(text: "Tessaglia")
         regione1.fontSize = 24
         regione1.position.x = -120
         regione1.position.y = 145
