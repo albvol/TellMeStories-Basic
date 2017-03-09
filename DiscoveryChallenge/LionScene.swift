@@ -107,7 +107,18 @@ class LionScene: SKScene, SKPhysicsContactDelegate  {
         projectile.position = Settings.Metrics.projectileRestPosition
         addChild(projectile)
         
-        showToolbar(withHint: "Colpisci il leone con le frecce")
+        var txtTool = ""
+        if (Language.getLanguage() == "it-IT")
+        {
+            txtTool = "Colpisci il leone con le frecce"
+        }
+            
+        else
+        {
+            txtTool = "Hit the lion with the arrows"
+        }
+        
+        showToolbar(withHint: txtTool)
     }
     
     func showToolbar(withHint text:String){
