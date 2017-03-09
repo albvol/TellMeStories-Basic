@@ -30,6 +30,8 @@ class ForestScene: SKScene {
         narratrice.position.y = -self.frame.height/4 - narratrice.frame.height/4
         //narratrice.setScale(0.5)
         
+        
+        //localization
        var text = ""
         var txtTool = ""
         
@@ -51,7 +53,7 @@ class ForestScene: SKScene {
         fumettoDX.setScale(0.5)
         fumettoDX.addText(Text: text, onLayer: CGFloat(1))
         narratrice.addChild(fumettoDX)
-        tts.toSpeech(text: text, inLanguage: "it-IT", atRate: 0.45)
+        tts.toSpeech(text: text, inLanguage: Language.getLanguage(), atRate: 0.45)
         
        
         
