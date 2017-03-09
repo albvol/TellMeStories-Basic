@@ -12,21 +12,63 @@ import CoreMotion
 
 class SmallVillageScene: SKScene {
     
-    private var background = ParralaxSprite(usingImage: "SmallVillage", referredWithName: "smallvillage")
+    private var background = ParralaxSprite(usingImage: "SmallVillage", referredWithName: "background")
     private var sound, language: Sprite?
     override func didMove(to view: SKView) {
+        
+        self.anchorPoint = CGPoint(x: 0.5, y:0.5)
+        
         
         
         
         //Add to the Scene the Background
+        
+            // resize sprite
+        let aspectRatio0 = background.size.width/background.size.height
+        let randWidth0 = CGFloat(view.frame.width + 50)
+        background.size = CGSize(width: randWidth0, height: randWidth0/aspectRatio0)
         addChild(background)
+        
         
         
         //Add to the Scene the firstHouse
         let house1 = Sprite(usingImage: "House1", referredWithName: "house1", withAlpha: CGFloat(1.0), onLayer: CGFloat(1))
-        house1.position.x = frame.maxX - (house1.size.width/2) - 15
-        house1.zPosition = 6
+        house1.position.x = -(frame.maxX - (house1.size.width/2 + 50))
+        house1.zPosition = 5
+        let aspectRatio1 = house1.size.width/house1.size.height
+        let randWidth1 = CGFloat(house1.size.width/3) * 1.4
+        house1.size = CGSize(width: randWidth1, height: randWidth1/aspectRatio1)
         addChild(house1)
+        
+        
+        
+        
+        //Add to the Scene the secondHouse
+        let house2 = Sprite(usingImage: "House1", referredWithName: "house2", withAlpha: CGFloat(1.0), onLayer: CGFloat(1))
+        house2.position.x = -(frame.maxX - (house2.size.width/4))
+        house2.position.y = -(frame.maxY - (house2.size.width/2))
+        house2.zPosition = 6
+        let aspectRatio2 = house2.size.width/house2.size.height
+        let randWidth2 = CGFloat(house2.size.width/3) * 1.8
+        house2.size = CGSize(width: randWidth2, height: randWidth2/aspectRatio2)
+        addChild(house2)
+        
+        
+        
+        //Add to the Scene the secondHouse
+        let house3 = Sprite(usingImage: "House2", referredWithName: "house3", withAlpha: CGFloat(1.0), onLayer: CGFloat(1))
+        house3.position.x = -(frame.maxX - (house3.size.width/2 + 20))
+        house3.position.y = -(frame.maxY - (house3.size.width/2 - 50))
+        house3.zPosition = 7
+        let aspectRatio3 = house3.size.width/house3.size.height
+        let randWidth3 = CGFloat(house3.size.width/3) * 1.8
+        house3.size = CGSize(width: randWidth3, height: randWidth3/aspectRatio3)
+        addChild(house3)
+        
+        
+        
+        
+        
         
         /*
         
