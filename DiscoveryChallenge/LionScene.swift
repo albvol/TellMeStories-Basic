@@ -113,6 +113,7 @@ class LionScene: SKScene, SKPhysicsContactDelegate  {
             txtTool = "Colpisci il leone con le frecce"
         }
             
+            
         else
         {
             txtTool = "Hit the lion with the arrows"
