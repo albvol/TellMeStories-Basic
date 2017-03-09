@@ -12,8 +12,7 @@ import GameplayKit
 
 class MapScene: SKScene {
     
-    private let tts = TextToSpeech()
-    private let sky = ParralaxSprite(usingImage: "Sky", referredWithName: "sky")
+    private let sky = Sprite(usingImage: "Sky", referredWithName: "background", withAlpha: CGFloat(1.0), onLayer: CGFloat(0))
 
     override func didMove(to view: SKView) {
         
@@ -24,7 +23,21 @@ class MapScene: SKScene {
         sky.size = CGSize(width: randWidth1, height: randWidth1/aspectRatio1)
         addChild(sky)
         
-        let map = Sprite(usingImage: "Map", referredWithName: "map", withAlpha: CGFloat(1.0), onLayer: CGFloat(1))
+        //Set and show the Sun Sprite
+        let sun = ParralaxSprite(usingImage: "Sun", referredWithName: "sun")
+        sun.alpha = 0
+        sun.zPosition = 0
+        sun.position.y = frame.maxY - sun.size.height/2
+        sun.position.x = frame.minX + sun.size.width/2
+        
+        addChild(sun)
+        sun.run(GameViewController.fadeIn)
+        
+        //Show the Toolbar
+        showToolbar(withHint: "Benvenuto! Dirigiti a Micene!")
+        
+        //Set and show the Map Sprite with the elements
+        let map = PanSprite(usingImage: "Map", referredWithName: "map", withAlpha: CGFloat(1.0), onLayer: CGFloat(1))
         
         let fish = Sprite(usingImage: "Fish", referredWithName: "fish", withAlpha: CGFloat(0.6), onLayer: CGFloat(1))
         fish.position.y = 140
@@ -36,32 +49,47 @@ class MapScene: SKScene {
         micene.position.x = 180
         map.addChild(micene)
         
-        let village1 = Sprite(usingImage: "Village", referredWithName: "village", withAlpha: CGFloat(0.6), onLayer: CGFloat(1))
+        let village1 = Sprite(usingImage: "Village", referredWithName: "village", withAlpha: CGFloat(1.0), onLayer: CGFloat(1))
         village1.position.y = -120
         village1.position.x = -350
         map.addChild(village1)
         
-        let cavern = Sprite(usingImage: "Cavern", referredWithName: "cavern", withAlpha: CGFloat(0.6), onLayer: CGFloat(1))
+        let cavern = Sprite(usingImage: "Cavern", referredWithName: "cavern", withAlpha: CGFloat(1.0), onLayer: CGFloat(1))
         cavern.position.y = -15
         cavern.position.x = -550
         map.addChild(cavern)
         
+        map.position.y = frame.minY + map.size.height/2 - 200
         addChild(map)
-        
-        let papyrus = Sprite(usingImage: "Papyrus", referredWithName: "papyrus", withAlpha: CGFloat(0.8), onLayer: CGFloat(3))
-        papyrus.size.width = size.width / 3
-        papyrus.size.height = size.height - 100
-        papyrus.position = CGPoint(x: size.width/3, y: 50)
-        
-        let narratrice = Sprite(usingImage: "Narratrice", referredWithName: "narratrice", withAlpha: CGFloat(2.0), onLayer: CGFloat(3))
-        
-        narratrice.position.x = size.width / 4 - (narratrice.size.width/3)*2
-        papyrus.addChild(narratrice)
+        //map.run(GameViewController.showUp)
+    }
     
-//        papyrus.addText(Text: "Nell’Argolide, storica regione dell’antica Grecia, c'era una valle chiamata Nemea dove viveva uno spaventoso leone, nato da Tifone e da Echidna, che terrorizzava tutti gli uomini. Questo leone era invulnerabile, nessuna arma era capace di scalfire la sua durissima pelle; zanne ed artigli erano dure quanto il metallo.", onLayer: CGFloat(2))
-//        
-//        addChild(papyrus)
-//        tts.toSpeech(text: "Nell’Argòlide, storica regione dell’antica Grecia, c'era una valle chiamata Nemea, dove viveva uno spaventoso leone, nato da Tifone e da Echidna, che terrorizzava tutti gli uomini. Questo leone era invulnerabile, nessuna arma era capace di scalfire la sua durissima pelle; zanne ed artigli erano dure quanto il metallo.", inLanguage: "it-IT", atRate: 0.45)
+    func showToolbar(withHint text:String){
+        let mapButton = Sprite(usingImage: "MapButton", referredWithName: "backToMap", withAlpha: CGFloat(1.0), onLayer: CGFloat(0))
+        mapButton.position.y = frame.maxY - mapButton.size.height/2 + 10
+        mapButton.position.x = frame.maxX - mapButton.size.width/2
+        mapButton.zPosition = 10
+        mapButton.alpha = 0
+        addChild(mapButton)
+        mapButton.run(GameViewController.showToolbar)
+        
+        let hintBar = Sprite(usingImage: "HintBar", referredWithName: "hintBar", withAlpha: CGFloat(1.0), onLayer: CGFloat(0))
+        hintBar.position.y = frame.maxY - mapButton.size.height/2 + 10
+        hintBar.zPosition = 10
+        hintBar.position.x = frame.maxX - hintBar.size.width/2 - mapButton.size.width
+        
+        let label = SKLabelNode(fontNamed: "Chalkduster")
+        label.fontSize = 23
+        label.name = name
+        label.text = text
+        label.zPosition = 10
+        label.fontColor = SKColor.white
+        label.position = CGPoint(x: 0, y: -5)
+        
+        hintBar.addChild(label)
+        
+        addChild(hintBar)
+        hintBar.run(GameViewController.showToolbar)
     }
     
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -92,7 +120,11 @@ class MapScene: SKScene {
             if node.name != nil {
                 switch node.name! {
                 case "micene":
+                    openScene(nextScene: ErcoleAtMicene(size: scene!.size))
+                case "village":
                     openScene(nextScene: SmallVillageScene(size: scene!.size))
+                case "cavern":
+                    openScene(nextScene: LionScene(size: scene!.size))
                 default:
                     node.touchesBegan(touches, with: event)
                 }

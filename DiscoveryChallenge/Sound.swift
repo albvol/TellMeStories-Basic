@@ -15,9 +15,9 @@ class Sound{
     static private var player: AVAudioPlayer?
     static var playing = false
     
-    init(usingFile resourceName: String) {
+    init(usingFile resourceName: String, withExtension ext: String) {
         
-        let url = Bundle.main.url(forResource: resourceName, withExtension: "mp3")!
+        let url = Bundle.main.url(forResource: resourceName, withExtension: ext)!
         
         do {
             Sound.player = try AVAudioPlayer(contentsOf: url)

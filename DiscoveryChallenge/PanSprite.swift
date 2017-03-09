@@ -30,13 +30,13 @@ class PanSprite: Sprite {
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         print(TAG, "touchesBegan")
         //run(interactionSound)
-        run(PanSprite.upScaleAndStop, withKey: "fadeInOut")
+        run(PanSprite.upScaleAndStop)
     }
     
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
         print(TAG, "touchesEnded")
         //run(interactionSound)
-        run(PanSprite.downScaleAndStop, withKey: "fadeInOut")
+        run(PanSprite.downScaleAndStop)
     }
     
     override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {

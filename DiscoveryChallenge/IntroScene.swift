@@ -35,8 +35,7 @@ class IntroScene: Intro {
             if node.name != nil {
                 switch node.name! {
                 case "next":
-                    print("HO PREMUTO ", node.name!)
-                    openScene(nextScene: MainMapScene(size: self.size))
+                    openScene(nextScene: MapScene(size: self.size))
                 default:
                     node.touchesBegan(touches, with: event)
                 }
