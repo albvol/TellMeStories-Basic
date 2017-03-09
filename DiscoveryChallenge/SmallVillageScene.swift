@@ -2,8 +2,8 @@
 //  GameScene.swift
 //  test
 //
-//  Created by Alberto Volpe on 28/02/2017.
-//  Copyright © 2017 Alberto Volpe. All rights reserved.
+//  Created by Gianfranco Bottiglieri on 09/04/2017.
+//  Copyright © 2017 Gianfranco Bottiglieri. All rights reserved.
 //
 
 import SpriteKit
@@ -24,6 +24,8 @@ class SmallVillageScene: SKScene {
         //Add to the Scene the Background
         
             // resize sprite
+        
+        let tts = TextToSpeech()
         let aspectRatio0 = background.size.width/background.size.height
         let randWidth0 = CGFloat(view.frame.width + 50)
         background.size = CGSize(width: randWidth0, height: randWidth0/aspectRatio0)
@@ -67,7 +69,31 @@ class SmallVillageScene: SKScene {
         
         
         
+        let narratrice = Sprite(usingImage: "Narratrice", referredWithName: "narratrice", withAlpha: CGFloat(1.0), onLayer: CGFloat(1))
         
+        narratrice.position.x = self.frame.width/4 - narratrice.frame.width/2
+        narratrice.position.y = -self.frame.height/4 - narratrice.frame.height/4
+        //narratrice.setScale(0.5)
+        
+        
+        
+        let text = "Il leone ha terrorizato questo villaggio, sei vicino, continua a cercare"
+        
+        //zeus.addChild(fumettoPS)
+        
+        let fumettoDX = InteractionableSprite(usingImage: "FumettoDx", referredWithName: "fumettoDX", withAlpha: CGFloat(1.0), onLayer: CGFloat(1), type: true)
+        fumettoDX.position.y = 250
+        fumettoDX.position.x = -150
+        fumettoDX.setScale(0.5)
+        fumettoDX.addText(Text: text, onLayer: CGFloat(1))
+        narratrice.addChild(fumettoDX)
+        tts.toSpeech(text: text, inLanguage: "it-IT", atRate: 0.45)
+        
+        
+        
+        
+        
+        addChild(narratrice)
         
         
         /*
