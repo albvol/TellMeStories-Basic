@@ -59,6 +59,12 @@ class MapScene: SKScene {
         cavern.position.x = -550
         map.addChild(cavern)
         
+        let forest = Sprite(usingImage: "ForestIcon", referredWithName: "forest", withAlpha: CGFloat(1.0), onLayer: CGFloat(1))
+        forest.position.y = 100
+        forest.position.x = 550
+        forest.setScale(0.3)
+        map.addChild(forest)
+        
         map.position.y = frame.minY + map.size.height/2 - 200
         addChild(map)
         //map.run(GameViewController.showUp)
@@ -125,6 +131,8 @@ class MapScene: SKScene {
                     openScene(nextScene: SmallVillageScene(size: scene!.size))
                 case "cavern":
                     openScene(nextScene: LionScene(size: scene!.size))
+                case "forest":
+                    openScene(nextScene: ForestScene(size: scene!.size))
                 default:
                     node.touchesBegan(touches, with: event)
                 }

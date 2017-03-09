@@ -37,6 +37,7 @@
 		2AF635B21E6987ED00C18708 /* DraggableSprite.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AF635B11E6987ED00C18708 /* DraggableSprite.swift */; };
 		6C324AC21E70180600C40E23 /* SmallVillageScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C324AC11E70180600C40E23 /* SmallVillageScene.swift */; };
 		AE0E931D1E702463007C6941 /* ErcoleAtMicene.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE0E931C1E702463007C6941 /* ErcoleAtMicene.swift */; };
+		AED659B61E715E3500269691 /* ForestScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = AED659B51E715E3500269691 /* ForestScene.swift */; };
 		F3624A881E66F812005C7C3A /* TextToSpeech.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3624A871E66F812005C7C3A /* TextToSpeech.swift */; };
 		F36B69361E6D5E1A00A16A3A /* MapScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = F36B69351E6D5E1A00A16A3A /* MapScene.swift */; };
 		F36B69381E6D5E2600A16A3A /* PanSprite.swift in Sources */ = {isa = PBXBuildFile; fileRef = F36B69371E6D5E2600A16A3A /* PanSprite.swift */; };
@@ -96,6 +97,7 @@
 		2AF635B11E6987ED00C18708 /* DraggableSprite.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DraggableSprite.swift; sourceTree = "<group>"; };
 		6C324AC11E70180600C40E23 /* SmallVillageScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SmallVillageScene.swift; sourceTree = "<group>"; };
 		AE0E931C1E702463007C6941 /* ErcoleAtMicene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ErcoleAtMicene.swift; path = ../ErcoleAtMicene.swift; sourceTree = "<group>"; };
+		AED659B51E715E3500269691 /* ForestScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForestScene.swift; sourceTree = "<group>"; };
 		F3624A871E66F812005C7C3A /* TextToSpeech.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextToSpeech.swift; sourceTree = "<group>"; };
 		F36B69351E6D5E1A00A16A3A /* MapScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapScene.swift; sourceTree = "<group>"; };
 		F36B69371E6D5E2600A16A3A /* PanSprite.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PanSprite.swift; sourceTree = "<group>"; };
@@ -141,6 +143,7 @@
 			children = (
 				2A65803F1E70BCFC00AC3C46 /* Temporaneo */,
 				F36B69351E6D5E1A00A16A3A /* MapScene.swift */,
+				AED659B51E715E3500269691 /* ForestScene.swift */,
 				AE0E931C1E702463007C6941 /* ErcoleAtMicene.swift */,
 				2A09375D1E6DFFB100A6C5D7 /* IntroScene.swift */,
 				6C324AC11E70180600C40E23 /* SmallVillageScene.swift */,
@@ -327,7 +330,7 @@
 				TargetAttributes = {
 					2AE24CB81E65D5B600A6F7B8 = {
 						CreatedOnToolsVersion = 8.2.1;
-						DevelopmentTeam = SBX78834CC;
+						DevelopmentTeam = GAJX5V6JZ3;
 						ProvisioningStyle = Automatic;
 					};
 					2AE24CD21E65D5B600A6F7B8 = {
@@ -420,6 +423,7 @@
 				2A0937631E6E07BE00A6C5D7 /* ReadableSprite.swift in Sources */,
 				6C324AC21E70180600C40E23 /* SmallVillageScene.swift in Sources */,
 				2ACF7B6A1E67616F00C30525 /* Sprite.swift in Sources */,
+				AED659B61E715E3500269691 /* ForestScene.swift in Sources */,
 				AE0E931D1E702463007C6941 /* ErcoleAtMicene.swift in Sources */,
 				2A6580421E70BD0A00AC3C46 /* Lion.swift in Sources */,
 			);
@@ -573,11 +577,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = SBX78834CC;
+				DEVELOPMENT_TEAM = GAJX5V6JZ3;
 				INFOPLIST_FILE = DiscoveryChallenge/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.albertovolpe.DiscoveryChallenge;
+				PRODUCT_BUNDLE_IDENTIFIER = com.albertovolpe.DiscoveryChallenge1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -587,11 +591,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = SBX78834CC;
+				DEVELOPMENT_TEAM = GAJX5V6JZ3;
 				INFOPLIST_FILE = DiscoveryChallenge/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.albertovolpe.DiscoveryChallenge;
+				PRODUCT_BUNDLE_IDENTIFIER = com.albertovolpe.DiscoveryChallenge1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
