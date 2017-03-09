@@ -77,7 +77,7 @@ class GameScene: SKScene {
                 case "language":
                     language!.texture = SKTexture(imageNamed: Language.change())
                 case "start":
-                    GameViewController.openScene(nextScene: LionScene(size: self.size))
+                    GameViewController.openScene(nextScene: IntroScene(size: self.size))
                 default:
                     node.touchesBegan(touches, with: event)
                 }

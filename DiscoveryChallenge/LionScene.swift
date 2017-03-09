@@ -58,16 +58,16 @@ class LionScene: SKScene, SKPhysicsContactDelegate  {
         addChild(sun)
         sun.run(LionScene.fadeIn)
         
-        let base = Sprite(usingImage: "LionEnvironmentBase", referredWithName: "Base", withAlpha: CGFloat(0.3), onLayer: CGFloat(1))
+        let base = Sprite(usingImage: "LionEnvironmentBase", referredWithName: "Base", withAlpha: CGFloat(0.3), onLayer: CGFloat(-1))
         base.position.y = frame.minY + base.size.height/2 - 100
         base.physicsBody?.collisionBitMask = 0
-        
+        base.physicsBody?.categoryBitMask = 0
+        base.physicsBody?.contactTestBitMask = 0
         addChild(base)
         base.run(LionScene.showUp)
         
         let lionEnvironment2 = Sprite(usingImage: "LionEnvironment", referredWithName: "LionEnvironment", withAlpha: CGFloat(1.0), onLayer: CGFloat(1))
         lionEnvironment2.position.y = frame.minY + lionEnvironment2.size.height/2 - 200
-        lionEnvironment2.physicsBody?.collisionBitMask = 0
         
         addChild(lionEnvironment2)
         lionEnvironment2.run(LionScene.showUp2)
@@ -91,7 +91,6 @@ class LionScene: SKScene, SKPhysicsContactDelegate  {
         let slingshot = SKSpriteNode(imageNamed: "bow")
         slingshot.position = CGPoint(x: frame.minX + slingshot.size.width/2, y: 0)
         slingshot.zPosition = 20
-        slingshot.physicsBody?.collisionBitMask = 0
         
         let aspectRatio1 = slingshot.size.width/slingshot.size.height
         let randWidth1 = CGFloat(80.0)
@@ -108,14 +107,9 @@ class LionScene: SKScene, SKPhysicsContactDelegate  {
         addChild(projectile)
         
         var txtTool = ""
-        if (Language.getLanguage() == "it-IT")
-        {
+        if (Language.getLanguage() == "it-IT") {
             txtTool = "Colpisci il leone con le frecce"
-        }
-            
-            
-        else
-        {
+        } else {
             txtTool = "Hit the lion with the arrows"
         }
         
@@ -154,7 +148,8 @@ class LionScene: SKScene, SKPhysicsContactDelegate  {
         if let nameB = contact.bodyB.node?.name{
             if let nameA = contact.bodyA.node?.name{
                 if nameA == "Lion" && nameB == "Arrow"{
-                    projectile.removeFromParent()
+                    //projectile.removeFromParent()
+                    openScene(nextScene: MapScene(size: self.size))
                     print("Contact made")
                 }
             }
