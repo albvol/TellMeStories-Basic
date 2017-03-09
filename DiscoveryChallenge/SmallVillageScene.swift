@@ -75,6 +75,7 @@ class SmallVillageScene: SKScene {
         narratrice.position.y = -self.frame.height/4 - narratrice.frame.height/4
         //narratrice.setScale(0.5)
         
+        //localization 
         var txt = ""
         var txtTool = ""
         if (Language.getLanguage() == "it-IT")
