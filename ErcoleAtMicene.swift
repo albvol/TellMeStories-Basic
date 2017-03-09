@@ -17,6 +17,7 @@ class ErcoleAtMicene: SKScene {
     
     override func didMove(to view: SKView) {
         print("Inizio la scena")
+        print("\(GameViewController.MiceneVisited)")
         self.anchorPoint = CGPoint(x: 0.5, y:0.5)
         
         let aspectRatio1 = view.frame.width/view.frame.height
@@ -46,7 +47,7 @@ class ErcoleAtMicene: SKScene {
         var textHercules = ""
         var txtTool = ""
         
-        if(GameViewController.MiceneVisited){
+        if(!GameViewController.MiceneVisited){
             
             switch Language.getLanguage(){
                 case "it-IT":
@@ -60,16 +61,15 @@ class ErcoleAtMicene: SKScene {
             }
             
         }else{
-            
-            GameViewController.MiceneVisited = true;
+
             switch Language.getLanguage(){
                 case "it-IT":
-                    text = "Ercole, in Nemea c'è un terribile leone che terrorizza il popolo. Voglio che tu vada lì e mi porti la sua pelliccia"
-                    textHercules = "Conta su di me!"
+                    text = "Ercole, hai trovato il Leone? Torna da me quando l'avrai sconfitto"
+                    textHercules = "Certamente!"
                     txtTool = "Sei arrivato a Micene!"
                 default:
-                    text = "Heracles, in Nemea there is a terrible Lion terrorizing the people. I want you to go there and bring to Zeus his fur"
-                    textHercules = "Count on me!"
+                    text = "Heracles, have you found the Lion? Come back when you will beat him"
+                    textHercules = "For sure!"
                     txtTool = "You are in Mycenae!"
             }
         }
@@ -152,7 +152,12 @@ class ErcoleAtMicene: SKScene {
             if node.name != nil {
                 switch node.name! {
                 case "backToMap":
-                    openScene(nextScene: MapScene(size: self.size))
+                    if GameViewController.MiceneVisited {
+                        openScene(nextScene: MapScene(size: self.size))
+                    } else {
+                        openScene(nextScene: MapGreeceScene(size: self.size))
+                        GameViewController.MiceneVisited = true
+                    }
                 default:
                     node.touchesBegan(touches, with: event)
                 }

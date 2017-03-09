@@ -35,14 +35,14 @@ class MapGreeceScene: SKScene {
         var txtTool = ""
         if (Language.getLanguage() == "it-IT")
         {
-             txtR1 = "Tessaglia"
-             txtR2 = "Epiro"
-             txtR3 = "Etolia"
-             txtR4 = "Macedonia"
-             txtR5 = "Argolide"
+            txtR1 = "Tessaglia"
+            txtR2 = "Epiro"
+            txtR3 = "Etolia"
+            txtR4 = "Macedonia"
+            txtR5 = "Argolide"
             txtTool = "Conduci l'eroe a Micene!"
         }
-        
+            
         else
         {
             txtR1 = "Thessaly"
@@ -64,6 +64,7 @@ class MapGreeceScene: SKScene {
         regione1.position.y = 145
         regione1.fontColor = color
         regione1.zPosition = 1
+        regione1.name = "reg1"
         addChild(regione1)
         
         let regione2 = SKLabelNode(text: txtR2 )
@@ -72,6 +73,7 @@ class MapGreeceScene: SKScene {
         regione2.position.y = 145
         regione2.fontColor = color
         regione2.zPosition = 2
+        regione2.name = "reg2"
         addChild(regione2)
         
         let regione3 = SKLabelNode(text: txtR3 )
@@ -81,6 +83,7 @@ class MapGreeceScene: SKScene {
         regione3.fontColor = color
         regione3.zPosition = 3
         regione3.zRotation = -7
+        regione3.name = "reg3"
         addChild(regione3)
         
         let regione4 = SKLabelNode(text: txtR4 )
@@ -89,6 +92,7 @@ class MapGreeceScene: SKScene {
         regione4.position.y = 205
         regione4.zPosition = 4
         regione4.fontColor = color
+        regione4.name = "reg4"
         addChild(regione4)
         
         let regione5 = SKLabelNode(text: txtR5 )
@@ -98,6 +102,7 @@ class MapGreeceScene: SKScene {
         regione5.zRotation = -7
         regione5.fontColor = color
         regione5.zPosition = 5
+        regione5.name = "reg5"
         addChild(regione5)
         
         /*  let regione6 = SKLabelNode(text: "regione6")
@@ -216,6 +221,16 @@ class MapGreeceScene: SKScene {
             
             if node.name != nil {
                 switch node.name! {
+                case "reg1":
+                    giveFeedback(found: false)
+                case "reg2":
+                    giveFeedback(found: false)
+                case "reg3":
+                    giveFeedback(found: false)
+                case "reg4":
+                    giveFeedback(found: false)
+                case "reg5":
+                    giveFeedback(found: true)
                 case "backToMap":
                     openScene(nextScene: MapScene(size: self.size))
                 default:
@@ -224,7 +239,37 @@ class MapGreeceScene: SKScene {
             }
         }
     }
-    
+    func giveFeedback(found: Bool){
+        if found {
+            openScene(nextScene: MapScene(size: self.size))
+        } else {
+            let toastLabel = UILabel(frame: CGRect(x: self.size.width/2 - 200 , y: self.size.height/3 - 30 , width: 400 , height: 60))
+            toastLabel.backgroundColor = UIColor.black
+            toastLabel.textColor = UIColor.white
+            toastLabel.textAlignment = NSTextAlignment.center;
+            self.view?.addSubview(toastLabel)
+            if (Language.getLanguage() == "it-IT") {
+                toastLabel.text = "Fai attenzione, Eracle deve raggiungere Nemea"
+            }else{
+                toastLabel.text = "Pay attention, Heracles should reach Nemea"
+            }
+            toastLabel.alpha = 1.0
+            toastLabel.layer.cornerRadius = 10;
+            toastLabel.clipsToBounds  =  true
+            UIView.animate(withDuration: 4.0, delay: 0.1, options: UIViewAnimationOptions.curveEaseOut, animations: {
+                
+                toastLabel.alpha = 0.0
+                
+            })
+            
+            UIView.animate(withDuration: 4.0, delay: 0.1, options: .curveEaseOut, animations: {
+                
+                toastLabel.alpha = 0.0
+                
+            }, completion: nil)
+        }
+        
+    }
     override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
         
         for t in touches { self.atPoint(t.location(in: self)).touchesMoved(touches, with: event) }
