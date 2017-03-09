@@ -132,7 +132,7 @@ class MapScene: SKScene {
                 case "cavern":
                     openScene(nextScene: LionScene(size: scene!.size))
                 case "forest":
-                    openScene(nextScene: ForestScene(size: scene!.size))
+                    openScene(nextScene: MapGreeceScene(size: scene!.size))
                 default:
                     node.touchesBegan(touches, with: event)
                 }
