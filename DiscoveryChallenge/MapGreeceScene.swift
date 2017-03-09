@@ -26,7 +26,7 @@ class MapGreeceScene: SKScene {
         
         let color = SKColor.black
         
-        let regione1 = SKLabelNode(text: "regione1")
+        let regione1 = SKLabelNode(text: "Tessalia")
         regione1.fontSize = 24
         regione1.position.x = -120
         regione1.position.y = 145
@@ -34,7 +34,7 @@ class MapGreeceScene: SKScene {
         regione1.zPosition = 1
         addChild(regione1)
         
-        let regione2 = SKLabelNode(text: "regione2")
+        let regione2 = SKLabelNode(text: "Epiro")
         regione2.fontSize = 18
         regione2.position.x = -230
         regione2.position.y = 145
@@ -42,7 +42,7 @@ class MapGreeceScene: SKScene {
         regione2.zPosition = 2
         addChild(regione2)
         
-        let regione3 = SKLabelNode(text: "regione3")
+        let regione3 = SKLabelNode(text: "Etolia")
         regione3.fontSize = 24
         regione3.position.x = -100
         regione3.position.y = 60
@@ -51,7 +51,7 @@ class MapGreeceScene: SKScene {
         regione3.zRotation = -7
         addChild(regione3)
         
-        let regione4 = SKLabelNode(text: "regione4")
+        let regione4 = SKLabelNode(text: "Macedonia")
         regione4.fontSize = 16
         regione4.position.x = -160
         regione4.position.y = 205
