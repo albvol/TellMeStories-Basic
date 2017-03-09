@@ -68,63 +68,63 @@ class MapGreeceScene: SKScene {
         regione5.zPosition = 5
         addChild(regione5)
         
-      /*  let regione6 = SKLabelNode(text: "regione6")
-        regione6.fontSize = 24
-        regione6.position.x = -180
-        regione6.position.y = 185
-        addChild(regione6)
-        
-        let regione7 = SKLabelNode(text: "regione7")
-        regione7.fontSize = 24
-        regione7.position.x = -180
-        regione7.position.y = 185
-        addChild(regione7)
-        
-        let regione8 = SKLabelNode(text: "regione8")
-        regione8.fontSize = 24
-        regione8.position.x = -180
-        regione8.position.y = 185
-        addChild(regione8)
-        
-        let regione9 = SKLabelNode(text: "regione9")
-        regione9.fontSize = 24
-        regione9.position.x = -180
-        regione9.position.y = 185
-        addChild(regione9)
-        
-        let regione10 = SKLabelNode(text: "regione10")
-        regione10.fontSize = 24
-        regione10.position.x = -180
-        regione10.position.y = 185
-        addChild(regione10) */
+        /*  let regione6 = SKLabelNode(text: "regione6")
+         regione6.fontSize = 24
+         regione6.position.x = -180
+         regione6.position.y = 185
+         addChild(regione6)
+         
+         let regione7 = SKLabelNode(text: "regione7")
+         regione7.fontSize = 24
+         regione7.position.x = -180
+         regione7.position.y = 185
+         addChild(regione7)
+         
+         let regione8 = SKLabelNode(text: "regione8")
+         regione8.fontSize = 24
+         regione8.position.x = -180
+         regione8.position.y = 185
+         addChild(regione8)
+         
+         let regione9 = SKLabelNode(text: "regione9")
+         regione9.fontSize = 24
+         regione9.position.x = -180
+         regione9.position.y = 185
+         addChild(regione9)
+         
+         let regione10 = SKLabelNode(text: "regione10")
+         regione10.fontSize = 24
+         regione10.position.x = -180
+         regione10.position.y = 185
+         addChild(regione10) */
         
         /*let narratrice = Sprite(usingImage: "Narratrice", referredWithName: "narratrice", withAlpha: CGFloat(1.0), onLayer: CGFloat(1))
-        
-        narratrice.position.x = self.frame.width/4 - narratrice.frame.width/2
-        narratrice.position.y = -self.frame.height/4 - narratrice.frame.height/4
-        //narratrice.setScale(0.5)
-        
-        
-        
-        var text = "Il leone è passato da qui , sei vicino"
-        
-        //zeus.addChild(fumettoPS)
-        
-        let fumettoDX = InteractionableSprite(usingImage: "FumettoDx", referredWithName: "fumettoDX", withAlpha: CGFloat(1.0), onLayer: CGFloat(1), type: true)
-        fumettoDX.position.y = 250
-        fumettoDX.position.x = -150
-        fumettoDX.setScale(0.5)
-        fumettoDX.addText(Text: text, onLayer: CGFloat(1))
-        narratrice.addChild(fumettoDX)
-        tts.toSpeech(text: text, inLanguage: "it-IT", atRate: 0.45)
-        
-        
-        
-        
-        
-        addChild(narratrice)
-        showToolbar(withHint: "Sei quasi vicino!")
-     */
+         
+         narratrice.position.x = self.frame.width/4 - narratrice.frame.width/2
+         narratrice.position.y = -self.frame.height/4 - narratrice.frame.height/4
+         //narratrice.setScale(0.5)
+         
+         
+         
+         var text = "Il leone è passato da qui , sei vicino"
+         
+         //zeus.addChild(fumettoPS)
+         
+         let fumettoDX = InteractionableSprite(usingImage: "FumettoDx", referredWithName: "fumettoDX", withAlpha: CGFloat(1.0), onLayer: CGFloat(1), type: true)
+         fumettoDX.position.y = 250
+         fumettoDX.position.x = -150
+         fumettoDX.setScale(0.5)
+         fumettoDX.addText(Text: text, onLayer: CGFloat(1))
+         narratrice.addChild(fumettoDX)
+         tts.toSpeech(text: text, inLanguage: "it-IT", atRate: 0.45)
+         
+         
+         
+         
+         
+         addChild(narratrice)
+         showToolbar(withHint: "Sei quasi vicino!")
+         */
         showToolbar(withHint: "Conduci l'eroe a Micene!")
         //
     }
@@ -200,5 +200,5 @@ class MapGreeceScene: SKScene {
     
     override func update(_ currentTime: TimeInterval) {
         
-}
+    }
 }
