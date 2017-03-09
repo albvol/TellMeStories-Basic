@@ -149,7 +149,7 @@ class LionScene: SKScene, SKPhysicsContactDelegate  {
             if let nameA = contact.bodyA.node?.name{
                 if nameA == "Lion" && nameB == "Arrow"{
                     //projectile.removeFromParent()
-                    openScene(nextScene: MapScene(size: self.size))
+                    openScene(nextScene: EndScene(size: self.size))
                     print("Contact made")
                 }
             }

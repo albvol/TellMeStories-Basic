@@ -54,11 +54,7 @@ class ForestScene: SKScene {
         fumettoDX.addText(Text: text, onLayer: CGFloat(1))
         narratrice.addChild(fumettoDX)
         tts.toSpeech(text: text, inLanguage: Language.getLanguage(), atRate: 0.45)
-        
-       
-        
-        
-        
+    
         addChild(narratrice)
         showToolbar(withHint: txtTool)
     }
