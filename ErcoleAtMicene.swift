@@ -47,7 +47,7 @@ class ErcoleAtMicene: SKScene {
         var textHercules = ""
         var txtTool = ""
         
-        if(GameViewController.MiceneVisited){
+        if(!GameViewController.MiceneVisited){
             
             switch Language.getLanguage(){
                 case "it-IT":
@@ -64,12 +64,12 @@ class ErcoleAtMicene: SKScene {
 
             switch Language.getLanguage(){
                 case "it-IT":
-                    text = "Ercole, in Nemea c'è un terribile leone che terrorizza il popolo. Voglio che tu vada lì e mi porti la sua pelliccia"
-                    textHercules = "Conta su di me!"
+                    text = "Ercole, hai trovato il Leone? Torna da me quando l'avrai sconfitto"
+                    textHercules = "Certamente!"
                     txtTool = "Sei arrivato a Micene!"
                 default:
-                    text = "Heracles, in Nemea there is a terrible Lion terrorizing the people. I want you to go there and bring to Zeus his fur"
-                    textHercules = "Count on me!"
+                    text = "Heracles, have you found the Lion? Come back when you will beat him"
+                    textHercules = "For sure!"
                     txtTool = "You are in Mycenae!"
             }
         }
