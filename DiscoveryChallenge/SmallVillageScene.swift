@@ -12,6 +12,7 @@ import CoreMotion
 
 class SmallVillageScene: SKScene {
     
+    let tts = TextToSpeech()
     private var background = ParralaxSprite(usingImage: "SmallVillage", referredWithName: "background")
     private var sound, language: Sprite?
     override func didMove(to view: SKView) {
@@ -24,8 +25,6 @@ class SmallVillageScene: SKScene {
         //Add to the Scene the Background
         
             // resize sprite
-        
-        let tts = TextToSpeech()
         let aspectRatio0 = background.size.width/background.size.height
         let randWidth0 = CGFloat(view.frame.width + 50)
         background.size = CGSize(width: randWidth0, height: randWidth0/aspectRatio0)
