@@ -26,9 +26,9 @@ class SmallVillageScene: SKScene {
         //Add to the Scene the Background
         
             // resize sprite
-        let aspectRatio0 = background.size.width/background.size.height
-        let randWidth0 = CGFloat(view.frame.width + 50)
-        background.size = CGSize(width: randWidth0, height: randWidth0/aspectRatio0)
+//        let aspectRatio0 = background.size.width/background.size.height
+//        let randWidth0 = CGFloat(view.frame.width + 50)
+//        background.size = CGSize(width: randWidth0, height: randWidth0/aspectRatio0)
         addChild(background)
         
         
