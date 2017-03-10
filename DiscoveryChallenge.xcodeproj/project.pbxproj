@@ -13,6 +13,7 @@
 		2A0937611E6E007600A6C5D7 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 2A0937601E6E007600A6C5D7 /* GameScene.sks */; };
 		2A0937631E6E07BE00A6C5D7 /* ReadableSprite.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A0937621E6E07BE00A6C5D7 /* ReadableSprite.swift */; };
 		2A0937691E6E26BE00A6C5D7 /* IntroScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 2A0937681E6E26BE00A6C5D7 /* IntroScene.sks */; };
+		2A0AA5901E72A3170044B035 /* AnimalSound.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A0AA58F1E72A3170044B035 /* AnimalSound.swift */; };
 		2A12123B1E70A7150084606B /* lion.wav in Resources */ = {isa = PBXBuildFile; fileRef = 2A12123A1E70A7150084606B /* lion.wav */; };
 		2A3475E81E6DB78500FD5376 /* Intro.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A3475E71E6DB78500FD5376 /* Intro.swift */; };
 		2A3475EA1E6DB79100FD5376 /* End.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A3475E91E6DB79100FD5376 /* End.swift */; };
@@ -69,6 +70,7 @@
 		2A0937601E6E007600A6C5D7 /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
 		2A0937621E6E07BE00A6C5D7 /* ReadableSprite.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReadableSprite.swift; sourceTree = "<group>"; };
 		2A0937681E6E26BE00A6C5D7 /* IntroScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; name = IntroScene.sks; path = ../IntroScene.sks; sourceTree = "<group>"; };
+		2A0AA58F1E72A3170044B035 /* AnimalSound.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimalSound.swift; sourceTree = "<group>"; };
 		2A12123A1E70A7150084606B /* lion.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = lion.wav; sourceTree = "<group>"; };
 		2A3475E71E6DB78500FD5376 /* Intro.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Intro.swift; sourceTree = "<group>"; };
 		2A3475E91E6DB79100FD5376 /* End.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = End.swift; sourceTree = "<group>"; };
@@ -264,6 +266,7 @@
 				2A0937561E6DEB2B00A6C5D7 /* Sound.swift */,
 				F3624A871E66F812005C7C3A /* TextToSpeech.swift */,
 				2A09375B1E6DF6F200A6C5D7 /* Language.swift */,
+				2A0AA58F1E72A3170044B035 /* AnimalSound.swift */,
 			);
 			name = Utils;
 			sourceTree = "<group>";
@@ -410,6 +413,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2AE24CC31E65D5B600A6F7B8 /* GameScene.swift in Sources */,
+				2A0AA5901E72A3170044B035 /* AnimalSound.swift in Sources */,
 				2AF635B01E6987D500C18708 /* InteractionableSprite.swift in Sources */,
 				2A3475E81E6DB78500FD5376 /* Intro.swift in Sources */,
 				F3624A881E66F812005C7C3A /* TextToSpeech.swift in Sources */,

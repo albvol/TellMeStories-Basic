@@ -28,8 +28,8 @@ class Lion: SKSpriteNode{
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         print("touchesBegan")
-        Sound.init(usingFile: "lion", withExtension: "wav")
-        Sound.on()
+        AnimalSound.init(usingFile: "lion", withExtension: "wav")
+        AnimalSound.on()
     }
     
     required init?(coder aDecoder: NSCoder) {
