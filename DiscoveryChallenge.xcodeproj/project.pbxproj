@@ -336,7 +336,7 @@
 				TargetAttributes = {
 					2AE24CB81E65D5B600A6F7B8 = {
 						CreatedOnToolsVersion = 8.2.1;
-						DevelopmentTeam = GAJX5V6JZ3;
+						DevelopmentTeam = 537Z9XA2B6;
 						ProvisioningStyle = Automatic;
 					};
 					2AE24CD21E65D5B600A6F7B8 = {
@@ -585,11 +585,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = GAJX5V6JZ3;
+				DEVELOPMENT_TEAM = 537Z9XA2B6;
 				INFOPLIST_FILE = DiscoveryChallenge/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.albertovolpe.DiscoveryChallenge1;
+				PRODUCT_BUNDLE_IDENTIFIER = com.albertovolpe.DiscoveryChallenge1.eren;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -599,11 +599,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = GAJX5V6JZ3;
+				DEVELOPMENT_TEAM = 537Z9XA2B6;
 				INFOPLIST_FILE = DiscoveryChallenge/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.albertovolpe.DiscoveryChallenge1;
+				PRODUCT_BUNDLE_IDENTIFIER = com.albertovolpe.DiscoveryChallenge1.eren;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};

@@ -15,6 +15,8 @@ class GameScene: SKScene {
     private var background = ParralaxSprite(usingImage: "Overlay", referredWithName: "background")
     private var sound, language: Sprite?
     
+    var label = SKLabelNode(fontNamed: "Chalkduster")
+    
     override func didMove(to view: SKView) {
         
         //Add to the Scene the Background
@@ -36,12 +38,12 @@ class GameScene: SKScene {
         addChild(language!)
         
         //Create, Poisition and Add to the Scene the Label "Start"
-        let label = SKLabelNode(fontNamed: "Chalkduster")
+        
         label.name = "start"
         label.fontSize = CGFloat(52)
         label.zPosition = 1
         label.fontColor = SKColor.white
-        label.text = "Inizia"
+        label.text = "INIZIA"
         addChild(label)
     }
     
@@ -76,6 +78,11 @@ class GameScene: SKScene {
                     sound!.texture = SKTexture(imageNamed: assetName)
                 case "language":
                     language!.texture = SKTexture(imageNamed: Language.change())
+                    if (Language.getLanguage() == "it-IT") {
+                        label.text = "INIZIA"
+                    }else{
+                        label.text = "PLAY"
+                    }
                 case "start":
                     GameViewController.openScene(nextScene: IntroScene(size: self.size))
                 default:
@@ -92,5 +99,6 @@ class GameScene: SKScene {
     
     override func update(_ currentTime: TimeInterval) {        
         self.background.parallaxMove()
+        
     }
 }

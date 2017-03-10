@@ -83,7 +83,7 @@ class LionScene: SKScene, SKPhysicsContactDelegate  {
         lion.position = CGPoint(x: frame.maxX - lion.size.width, y:  0)
         
         let aspectRatio2 = lion.size.width/lion.size.height
-        let randWidth2 = CGFloat(90.0)
+        let randWidth2 = CGFloat(180.0)
         lion.size = CGSize(width: randWidth2, height: randWidth2/aspectRatio2)
         addChild(lion)
         
@@ -108,9 +108,9 @@ class LionScene: SKScene, SKPhysicsContactDelegate  {
         
         var txtTool = ""
         if (Language.getLanguage() == "it-IT") {
-            txtTool = "Colpisci il leone con le frecce"
+            txtTool = "Colpisci il Leone con le frecce"
         } else {
-            txtTool = "Hit the lion with the arrows"
+            txtTool = "Hit the Lion with the arrows"
         }
         
         showToolbar(withHint: txtTool)

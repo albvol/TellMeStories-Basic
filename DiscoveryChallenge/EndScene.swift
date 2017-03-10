@@ -19,9 +19,9 @@ class EndScene: End {
         
         var txt1 = ""
         if (Language.getLanguage() == "it-IT") {
-            txt1 = "Il Leone entrò nella sua caverna, ma Eracle non mollava e seguì la belva. Ne nacque un duello corpo a corpo dove, con astuzia, Eracle ebbe la meglio. Caricato il Leone sulle spalle, in segno di trionfo, lo portò a Micene dove lo aspettava Euristeo. Zeus,venuto a sapere dell’impresa di Eracle, volle rendere omaggio alla creatura, ponendo il Leone di Nemea fra le stelle, formando così la costellazione del leone."
+            txt1 = "Le frecce rimbalzavano sulla pelliccia del Leone senza scalfirlo. Quindi il Leone andò via ed entrò nella sua caverna, ma Eracle non mollava e seguì la belva. Ne nacque un duello corpo a corpo dove, con astuzia, Eracle ebbe la meglio. Caricato il Leone sulle spalle, in segno di trionfo, lo portò a Micene dove lo aspettava Euristeo. Zeus,venuto a sapere dell’impresa di Eracle, volle rendere omaggio alla creatura, ponendo il Leone di Nemea fra le stelle, formando così la costellazione del leone."
         } else {
-            txt1 = "The Lion stepped into his cave, but Heracles wouldn\'t gave up and followed the beast inside. The result was a body-to-hand duel where, with foxiness, Heracles won. Loaded the lion on his shoulders, in triumph, Heracles brought him to Mycenae, where Eurystheus was waiting for him. Zeus, learned about Heracles, wanted to tribute the creature, putting the Lion of Nemea among the stars, giving birth to the constellation Leo."
+            txt1 = "The arrows keeps bouncing on the Lion's fur without damaging him. So the Lion went away and stepped into his cave, but Heracles wouldn\'t gave up and followed the beast inside. The result was a body-to-hand duel where, with foxiness, Heracles won. Loaded the lion on his shoulders, in triumph, Heracles brought him to Mycenae, where Eurystheus was waiting for him. Zeus, learned about Heracles, wanted to tribute the creature, putting the Lion of Nemea among the stars, giving birth to the constellation Leo."
         }
         
         setSequence(size: size, usingImage: "Overlay", text: txt1)
@@ -42,8 +42,8 @@ class EndScene: End {
             
             if node.name != nil {
                 switch node.name! {
-                case "next":
-                    openScene(nextScene: MapScene(size: self.size))
+                case "restart":
+                    openScene(nextScene: IntroScene(size: self.size))
                 default:
                     node.touchesBegan(touches, with: event)
                 }

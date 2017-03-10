@@ -49,16 +49,16 @@ class End: SKScene {
         
         //Create, Poisition and Add to the Scene the Label "Start"
         let label = SKLabelNode(fontNamed: "Chalkduster")
-        label.name = "next"
+        label.name = "restart"
         label.position = introText.position
-        label.position.y = introText.frame.minY + 100
+        label.position.y = introText.frame.minY 
         label.zPosition = 1
         label.fontColor = SKColor.white
         
         if (Language.getLanguage() == "it-IT") {
-            label.text = "CONTINUA"
+            label.text = "RICOMINCIA"
         }else{
-            label.text = "CONTINUE"
+            label.text = "RESTART"
         }
         
         super.addChild(label)
