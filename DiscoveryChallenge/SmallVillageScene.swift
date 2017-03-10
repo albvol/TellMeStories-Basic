@@ -193,6 +193,7 @@ class SmallVillageScene: SKScene {
             if node.name != nil {
                 switch node.name! {
                 case "backToMap":
+                    tts.stopSpeaking()
                     openScene(nextScene: MapScene(size: self.size))
                 default:
                     node.touchesBegan(touches, with: event)

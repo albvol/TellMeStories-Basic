@@ -37,7 +37,7 @@ class ForestScene: SKScene {
         var txtTool = ""
         
         if (Language.getLanguage() == "it-IT")
-        {   text = "Il leone è passato da qui , sei vicino"
+        {   text = "Il leone è passato da qui, sei vicino"
             txtTool = "Ci sei quasi, ma non ti allontanare troppo!"
         }
         else
@@ -120,6 +120,7 @@ class ForestScene: SKScene {
             if node.name != nil {
                 switch node.name! {
                 case "backToMap":
+                    tts.stopSpeaking()
                     openScene(nextScene: MapScene(size: self.size))
                 default:
                     node.touchesBegan(touches, with: event)

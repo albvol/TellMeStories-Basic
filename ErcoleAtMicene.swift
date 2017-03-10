@@ -153,8 +153,10 @@ class ErcoleAtMicene: SKScene {
                 switch node.name! {
                 case "backToMap":
                     if GameViewController.MiceneVisited {
+                        tts.stopSpeaking()
                         openScene(nextScene: MapScene(size: self.size))
                     } else {
+                        tts.stopSpeaking()
                         openScene(nextScene: MapGreeceScene(size: self.size))
                         GameViewController.MiceneVisited = true
                     }
