@@ -24,7 +24,7 @@ class AnimalSound{
             guard let player = AnimalSound.player else { return }
             
             player.prepareToPlay()
-            player.volume = 1
+            player.volume = 0.6
             AnimalSound.playing = true
             
         } catch let error {

@@ -15,12 +15,13 @@ class SmallVillageScene: SKScene {
     let tts = TextToSpeech()
     private var background = ParralaxSprite(usingImage: "SmallVillage", referredWithName: "background")
     private var sound, language: Sprite?
+    
     override func didMove(to view: SKView) {
         
         self.anchorPoint = CGPoint(x: 0.5, y:0.5)
         
-        
-        
+        //AnimalSound.init(usingFile: "ruscello", withExtension: "mp3")
+        //AnimalSound.on()
         
         //Add to the Scene the Background
         

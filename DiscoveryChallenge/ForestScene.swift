@@ -18,6 +18,10 @@ class ForestScene: SKScene {
     override func didMove(to view: SKView) {
     
          self.anchorPoint = CGPoint(x: 0.5, y:0.5)
+    
+        AnimalSound.init(usingFile: "forest", withExtension: "mp3")
+        AnimalSound.on()
+        
         
         let aspectRatio1 = view.frame.width/view.frame.height
         let randWidth1 = CGFloat(view.frame.width + 50.0)

@@ -14,7 +14,9 @@
 		2A0937631E6E07BE00A6C5D7 /* ReadableSprite.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A0937621E6E07BE00A6C5D7 /* ReadableSprite.swift */; };
 		2A0937691E6E26BE00A6C5D7 /* IntroScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 2A0937681E6E26BE00A6C5D7 /* IntroScene.sks */; };
 		2A0AA5901E72A3170044B035 /* AnimalSound.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A0AA58F1E72A3170044B035 /* AnimalSound.swift */; };
-		2A12123B1E70A7150084606B /* lion.wav in Resources */ = {isa = PBXBuildFile; fileRef = 2A12123A1E70A7150084606B /* lion.wav */; };
+		2A0AA5941E72A57D0044B035 /* forest.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 2A0AA5911E72A57D0044B035 /* forest.mp3 */; };
+		2A0AA5951E72A57D0044B035 /* leone.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 2A0AA5921E72A57D0044B035 /* leone.mp3 */; };
+		2A0AA5961E72A57D0044B035 /* ruscello.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 2A0AA5931E72A57D0044B035 /* ruscello.mp3 */; };
 		2A3475E81E6DB78500FD5376 /* Intro.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A3475E71E6DB78500FD5376 /* Intro.swift */; };
 		2A3475EA1E6DB79100FD5376 /* End.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A3475E91E6DB79100FD5376 /* End.swift */; };
 		2A3475EC1E6DB79E00FD5376 /* Scene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A3475EB1E6DB79E00FD5376 /* Scene.swift */; };
@@ -71,7 +73,9 @@
 		2A0937621E6E07BE00A6C5D7 /* ReadableSprite.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReadableSprite.swift; sourceTree = "<group>"; };
 		2A0937681E6E26BE00A6C5D7 /* IntroScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; name = IntroScene.sks; path = ../IntroScene.sks; sourceTree = "<group>"; };
 		2A0AA58F1E72A3170044B035 /* AnimalSound.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimalSound.swift; sourceTree = "<group>"; };
-		2A12123A1E70A7150084606B /* lion.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = lion.wav; sourceTree = "<group>"; };
+		2A0AA5911E72A57D0044B035 /* forest.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = forest.mp3; sourceTree = "<group>"; };
+		2A0AA5921E72A57D0044B035 /* leone.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = leone.mp3; sourceTree = "<group>"; };
+		2A0AA5931E72A57D0044B035 /* ruscello.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = ruscello.mp3; sourceTree = "<group>"; };
 		2A3475E71E6DB78500FD5376 /* Intro.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Intro.swift; sourceTree = "<group>"; };
 		2A3475E91E6DB79100FD5376 /* End.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = End.swift; sourceTree = "<group>"; };
 		2A3475EB1E6DB79E00FD5376 /* Scene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Scene.swift; sourceTree = "<group>"; };
@@ -196,8 +200,10 @@
 		2A99F9301E65E096005CF438 /* Sounds */ = {
 			isa = PBXGroup;
 			children = (
+				2A0AA5911E72A57D0044B035 /* forest.mp3 */,
+				2A0AA5921E72A57D0044B035 /* leone.mp3 */,
+				2A0AA5931E72A57D0044B035 /* ruscello.mp3 */,
 				2A99F9311E65E0CC005CF438 /* tune.mp3 */,
-				2A12123A1E70A7150084606B /* lion.wav */,
 			);
 			name = Sounds;
 			sourceTree = "<group>";
@@ -382,11 +388,13 @@
 				2AE24CC81E65D5B600A6F7B8 /* Main.storyboard in Resources */,
 				2A0937691E6E26BE00A6C5D7 /* IntroScene.sks in Resources */,
 				2A6B50821E6629E200308385 /* Actions.sks in Resources */,
+				2A0AA5961E72A57D0044B035 /* ruscello.mp3 in Resources */,
+				2A0AA5941E72A57D0044B035 /* forest.mp3 in Resources */,
+				2A0AA5951E72A57D0044B035 /* leone.mp3 in Resources */,
 				2AE24CCA1E65D5B600A6F7B8 /* Assets.xcassets in Resources */,
 				2A99F9321E65E0CC005CF438 /* tune.mp3 in Resources */,
 				2A0937611E6E007600A6C5D7 /* GameScene.sks in Resources */,
 				2A65803E1E70A74100AC3C46 /* MyActions2.sks in Resources */,
-				2A12123B1E70A7150084606B /* lion.wav in Resources */,
 				2AE24CCD1E65D5B600A6F7B8 /* LaunchScreen.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
