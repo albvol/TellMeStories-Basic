@@ -71,6 +71,19 @@ class MapScene: SKScene {
         
         map.position.y = frame.minY + map.size.height/2 - 200
         addChild(map)
+        
+        
+        if GameViewController.MiceneVisited {
+            forest.alpha = 1.0
+            cavern.alpha = 1.0
+            village1.alpha = 1.0
+        } else {
+            forest.alpha = 0.3
+            cavern.alpha = 0.3
+            village1.alpha = 0.3
+
+        }
+        
         //map.run(GameViewController.showUp)
     }
     
